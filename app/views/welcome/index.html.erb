@@ -1,0 +1,7 @@
+<h2>Admin Interface</h2>
+
+<%= link_to 'Categories', controller: 'categories' %><br />
+
+<% @categories.each do |category| %>
+  <%= category.description %> <br />
+<% end %>
