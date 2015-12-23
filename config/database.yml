@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: ticketfinders1_development
+
+test:
+  <<: *default
+  database: ticketfinders1_test
+
+production:
+  <<: *default
+  database: ticketfinders1_production
+  username: ticketfinders1
+  password: <%= ENV['TICKETFINDERS1_DATABASE_PASSWORD'] %>
