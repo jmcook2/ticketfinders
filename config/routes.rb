@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/index'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :categories
   resources :competitions
+  resources :events
 
   # Example resource route with options:
   #   resources :products do

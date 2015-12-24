@@ -11,3 +11,9 @@
 <% @competitions.each do |competition| %>
   <%= competition.name %> <br />
 <% end %><br />
+
+<%= link_to 'Events', controller: 'events' %><br />
+
+<% @events.each do |event| %>
+  <%= event.name %> <br />
+<% end %><br />

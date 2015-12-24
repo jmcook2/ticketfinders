@@ -1,0 +1,55 @@
+<%= form_for @event do |f| %>
+
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@event.errors.count, "error") %> prohibited
+        this event from being saved:
+      </h2>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :start_time %><br>
+    <%= f.datetime_select :start_time %>
+  </p>
+
+  <p>
+    <%= f.label :end_time %><br>
+    <%= f.datetime_select :end_time %>
+  </p>
+
+  <p>
+    <%= f.label :venue_id %><br>
+    <%= f.collection_select(:venue_id, Venue.all, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :category_id %><br>
+    <%= f.collection_select(:category_id, Category.all, :id, :description) %>
+  </p>
+
+  <p>
+    <%= f.label :teams_artist_id %><br>
+    <%= f.collection_select(:teams_artist_id, TeamsArtist.all, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.label :teams_artist_id %><br>
+    <%= f.collection_select(:teams_artist_id, TeamsArtist.all, :id, :name, :include_blank => true) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
