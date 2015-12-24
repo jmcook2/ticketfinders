@@ -4,4 +4,10 @@
 
 <% @categories.each do |category| %>
   <%= category.description %> <br />
-<% end %>
+<% end %><br />
+
+<%= link_to 'Competitions', controller: 'competitions' %><br />
+
+<% @competitions.each do |competition| %>
+  <%= competition.name %> <br />
+<% end %><br />
