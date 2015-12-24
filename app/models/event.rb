@@ -4,7 +4,8 @@ class Event < ActiveRecord::Base
   has_one :category
   has_many :teamsartists
 
-  validates :name, presence: true
+  validates :name, presence: true,
+                   length: { maximum: 20 }
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :venue_id, presence: true
