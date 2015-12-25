@@ -21,7 +21,7 @@
 
   <p>
     <%= f.label :category_id %><br>
-    <%= f.collection_select(:category_id, Category.all, :id, :description) %>
+    <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description) %>
   </p>
 
   <p>

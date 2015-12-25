@@ -31,22 +31,17 @@
 
   <p>
     <%= f.label :venue_id %><br>
-    <%= f.collection_select(:venue_id, Venue.all, :id, :name) %>
+    <%= f.collection_select(:venue_id, Venue.order('name ASC'), :id, :name) %>
   </p>
 
   <p>
     <%= f.label :category_id %><br>
-    <%= f.collection_select(:category_id, Category.all, :id, :description) %>
+    <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description) %>
   </p>
 
   <p>
     <%= f.label :teams_artist_id %><br>
-    <%= f.collection_select(:teams_artist_id, TeamsArtist.all, :id, :name) %>
-  </p>
-
-  <p>
-    <%= f.label :teams_artist_id %><br>
-    <%= f.collection_select(:teams_artist_id, TeamsArtist.all, :id, :name, :include_blank => true) %>
+    <%= f.collection_select(:teams_artist_id, TeamsArtist.order('name ASC'), :id, :name) %>
   </p>
 
   <p>
