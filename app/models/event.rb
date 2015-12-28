@@ -10,6 +10,5 @@ class Event < ActiveRecord::Base
   validates :end_time, presence: true
   validates :venue_id, presence: true
   validates :category_id, presence: true
-  validates :teams_artist_id, presence: true
 
 end

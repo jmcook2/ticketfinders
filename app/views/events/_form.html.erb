@@ -40,11 +40,6 @@
   </p>
 
   <p>
-    <%= f.label :teams_artist_id %><br>
-    <%= f.collection_select(:teams_artist_id, TeamsArtist.order('name ASC'), :id, :name) %>
-  </p>
-
-  <p>
     <%= f.submit %>
   </p>
 <% end %>

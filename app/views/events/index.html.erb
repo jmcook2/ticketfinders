@@ -9,7 +9,6 @@
     <th>End time</th>
     <th>Venue</th>
     <th>Category</th>
-    <th>Teams / Artist</th>
   </tr>
 
   <% @events.each do |event| %>
@@ -19,7 +18,6 @@
       <td><%= event.end_time %></td>
       <td><%= event.venue_id %></td>
       <td><%= event.category_id %></td>
-      <td><%= event.teams_artist_id %></td>
       <td><%= link_to 'Show', event_path(event) %></td>
       <td><%= link_to 'Edit', edit_event_path(event) %></td>
       <td><%= link_to 'Destroy', event_path(event),
