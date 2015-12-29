@@ -1,6 +1,6 @@
 class Competition < ActiveRecord::Base
 
-  has_many :teamsartists
+  has_many :players
   has_one :category
 
   validates :name, presence: true,

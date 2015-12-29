@@ -1,6 +1,6 @@
 class Ticket < ActiveRecord::Base
 
-  has_one :event
+  belongs_to :event
 
   validates :price, presence: true
   validates :category, presence: true

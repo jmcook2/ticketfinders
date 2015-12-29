@@ -1,4 +1,4 @@
-class TeamsArtist < ActiveRecord::Base
+class Player < ActiveRecord::Base
 
   has_many :events
   has_many :competitions
