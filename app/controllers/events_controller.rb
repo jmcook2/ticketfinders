@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+  layout "admin"
+
   def index
     @events = Event.all
   end
@@ -20,6 +22,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
+      flash[:notice] = "Event successfully created"
       redirect_to @event
     else
       render 'new'
@@ -30,6 +33,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     if @event.update(event_params)
+      flash[:notice] = "Event successfully updated"
       redirect_to @event
     else
       render 'edit'
@@ -39,7 +43,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-
+    flash[:notice] = "Event successfully deleted"
     redirect_to events_path
   end
 

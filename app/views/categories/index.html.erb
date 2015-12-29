@@ -1,6 +1,6 @@
 <h1>Listing Categories</h1>
 
-<%= link_to 'New category', new_category_path %> | <%= link_to 'Admin Home', controller: 'welcome' %>
+<%= link_to 'New category', new_category_path %>
 
 <table>
   <tr>
@@ -14,7 +14,7 @@
       <td><%= link_to 'Edit', edit_category_path(category) %></td>
       <td><%= link_to 'Destroy', category_path(category),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Warning. Deleting this category will delete all associated events & competitions.' } %></td>
     </tr>
   <% end %>
 </table>

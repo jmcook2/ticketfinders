@@ -1,5 +1,7 @@
 class CompetitionsController < ApplicationController
 
+  layout "admin"
+
   def index
     @competitions = Competition.all
   end
@@ -20,6 +22,7 @@ class CompetitionsController < ApplicationController
     @competition = Competition.new(competition_params)
 
     if @competition.save
+      flash[:notice] = "Competition successfully created"
       redirect_to @competition
     else
       render 'new'
@@ -30,6 +33,7 @@ class CompetitionsController < ApplicationController
     @competition = Competition.find(params[:id])
 
     if @competition.update(competition_params)
+      flash[:notice] = "Competition successfully updated"
       redirect_to @competition
     else
       render 'edit'
@@ -39,7 +43,7 @@ class CompetitionsController < ApplicationController
   def destroy
     @competition = Competition.find(params[:id])
     @competition.destroy
-
+    flash[:notice] = "Competition successfully deleted"
     redirect_to competitions_path
   end
 
