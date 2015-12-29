@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
     @categories = Category.all
     @competitions = Competition.all
     @events = Event.all
+    @players = Player.all
   end
 
 end

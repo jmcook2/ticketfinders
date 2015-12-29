@@ -15,3 +15,9 @@
 <% @events.each do |event| %>
   <%= event.name %> <br />
 <% end %><br />
+
+<%= link_to 'Players', controller: 'players' %><br />
+
+<% @players.each do |player| %>
+  <%= player.name %> <br />
+<% end %><br />
