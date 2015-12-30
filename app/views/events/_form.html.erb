@@ -31,12 +31,12 @@
 
   <p>
     <%= f.label :venue_id %><br>
-    <%= f.collection_select(:venue_id, Venue.order('name ASC'), :id, :name) %>
+    <%= f.collection_select(:venue_id, Venue.order('name ASC'), :id, :name, prompt: true) %>
   </p>
 
   <p>
     <%= f.label :category_id %><br>
-    <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description) %>
+    <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description, prompt: true) %>
   </p>
 
   <!-- habtm addition -->
