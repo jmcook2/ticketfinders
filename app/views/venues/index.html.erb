@@ -1,0 +1,26 @@
+<h1>Listing Venues</h1>
+
+<%= link_to 'New venue', new_venue_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Capacity</th>
+    <th>City</th>
+    <th>Country</th>
+  </tr>
+
+  <% @venues.each do |venue| %>
+    <tr>
+      <td><%= venue.name %></td>
+      <td><%= venue.capacity %></td>
+      <td><%= venue.city %></td>
+      <td><%= venue.country %></td>
+      <td><%= link_to 'Show', venue_path(venue) %></td>
+      <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+      <td><%= link_to 'Destroy', venue_path(venue),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

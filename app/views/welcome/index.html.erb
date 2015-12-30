@@ -27,3 +27,9 @@
 <% @tickets.each do |ticket| %>
   <%= ticket.event_id %> <br />
 <% end %><br />
+
+<%= link_to 'Venues', controller: 'venues' %><br />
+
+<% @venues.each do |venue| %>
+  <%= venue.name %> <br />
+<% end %><br />

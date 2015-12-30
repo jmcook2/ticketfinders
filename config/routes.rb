@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'venues/index'
+
   get 'tickets/index'
 
   get 'players/index'
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   resources :events
   resources :players
   resources :tickets
+  resources :venues
 
   # Example resource route with options:
   #   resources :products do

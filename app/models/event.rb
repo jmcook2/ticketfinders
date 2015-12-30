@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  has_one :venue
+  belongs_to :venue
   has_one :category
   has_and_belongs_to_many :players
   has_many :tickets, dependent: :destroy
