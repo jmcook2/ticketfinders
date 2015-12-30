@@ -20,6 +20,8 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @players = Player.where(:id => params[:event_players])
+    @event.players << @players
 
     if @event.save
       flash[:notice] = "Event successfully created"
@@ -31,6 +33,9 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    @players = Player.where(:id => params[:event_players])
+    @event.players.destroy_all
+    @event.players << @players
 
     if @event.update(event_params)
       flash[:notice] = "Event successfully updated"

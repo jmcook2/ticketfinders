@@ -39,6 +39,13 @@
     <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description) %>
   </p>
 
+  <!-- addition -->
+
+  <p>
+    <%= f.label :players %>
+    <%= select_tag "event_players", options_from_collection_for_select(Player.all, 'id', 'name',@event.players.map{ |player| player.id }), :multiple => true %>
+  </p>
+
   <p>
     <%= f.submit %>
   </p>
