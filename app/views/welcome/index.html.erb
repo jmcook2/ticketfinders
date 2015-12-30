@@ -21,3 +21,9 @@
 <% @players.each do |player| %>
   <%= player.name %> <br />
 <% end %><br />
+
+<%= link_to 'Tickets', controller: 'tickets' %><br />
+
+<% @tickets.each do |ticket| %>
+  <%= ticket.event_id %> <br />
+<% end %><br />
