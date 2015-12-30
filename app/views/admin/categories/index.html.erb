@@ -1,0 +1,20 @@
+<h1>Listing Categories</h1>
+
+<%= link_to 'New category', new_admin_category_path %>
+
+<table>
+  <tr>
+    <th>Description</th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.description %></td>
+      <td><%= link_to 'Show', admin_category_path(category) %></td>
+      <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
+      <td><%= link_to 'Destroy', admin_category_path(category),
+              method: :delete,
+              data: { confirm: 'Warning. Deleting this category will delete all associated events & competitions.' } %></td>
+    </tr>
+  <% end %>
+</table>

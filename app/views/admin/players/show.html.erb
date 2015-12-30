@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @player.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @player.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_admin_player_path(@player) %> |
+<%= link_to 'Back', admin_players_path %>

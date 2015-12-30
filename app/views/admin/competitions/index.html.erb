@@ -1,0 +1,22 @@
+<h1>Listing Competitions</h1>
+
+<%= link_to 'New competition', new_admin_competition_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+  </tr>
+
+  <% @competitions.each do |competition| %>
+    <tr>
+      <td><%= competition.name %></td>
+      <td><%= competition.category_id %></td>
+      <td><%= link_to 'Show', admin_competition_path(competition) %></td>
+      <td><%= link_to 'Edit', edit_admin_competition_path(competition) %></td>
+      <td><%= link_to 'Destroy', admin_competition_path(competition),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

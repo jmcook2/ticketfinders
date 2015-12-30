@@ -1,0 +1,28 @@
+<h1>Listing Events</h1>
+
+<%= link_to 'New event', new_admin_event_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Venue</th>
+    <th>Category</th>
+  </tr>
+
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.start_time %></td>
+      <td><%= event.end_time %></td>
+      <td><%= event.venue_id %></td>
+      <td><%= event.category_id %></td>
+      <td><%= link_to 'Show', admin_event_path(event) %></td>
+      <td><%= link_to 'Edit', edit_admin_event_path(event) %></td>
+      <td><%= link_to 'Destroy', admin_event_path(event),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

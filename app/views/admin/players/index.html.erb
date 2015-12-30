@@ -1,0 +1,22 @@
+<h1>Listing Players</h1>
+
+<%= link_to 'New player', new_admin_player_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+  </tr>
+
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.category_id %></td>
+      <td><%= link_to 'Show', admin_player_path(player) %></td>
+      <td><%= link_to 'Edit', edit_admin_player_path(player) %></td>
+      <td><%= link_to 'Destroy', admin_player_path(player),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
