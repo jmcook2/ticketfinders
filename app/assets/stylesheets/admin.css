@@ -1,11 +1,52 @@
+*{margin: 0; padding: 0;}
+
 body {
-  font-family: 'Roboto', sans-serif;
-  padding: 20px;
+  font-family: 'Lato', sans-serif;
 }
 
-.inline {
-  display: inline-block;
-  padding: 10px;
+.header-container {
+  background-color: #2D9EE4;
+  color: white;
+  text-align: center;
+  vertical-align: text-top;
+  height: 6em;
+  padding-left: 8px;
+  position: relative;
+}
+
+.homelink {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.homelink a:link, .homelink a:visited {
+  float: right;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo {
+  font-size: 2.5em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.medium {
+  font-weight: 400;
 }
 
 .flash {
