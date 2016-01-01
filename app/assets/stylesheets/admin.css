@@ -22,12 +22,6 @@ body {
   color: #2D9EE4;
 }
 
-.homelink a:link, .homelink a:visited {
-  float: right;
-  text-decoration: none;
-  color: #fff;
-}
-
 .bold {
   font-weight: 700;
 }
