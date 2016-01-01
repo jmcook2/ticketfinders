@@ -1,11 +1,17 @@
 <h1>Listing Players</h1>
 
-<%= link_to 'New player', new_admin_player_path %>
+<%= link_to 'New player', new_admin_player_path, class: "pure-button" %>
 
-<table>
+<br />
+<br />
+
+<table class="pure-table pure-table-striped pure-table-horizontal">
   <tr>
     <th>Name</th>
     <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
   <% @players.each do |player| %>

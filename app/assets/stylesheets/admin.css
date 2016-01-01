@@ -4,37 +4,28 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.header-container {
+.pure-menu {
+  font-size: 1.7em;
   background-color: #2D9EE4;
-  color: white;
-  text-align: center;
-  vertical-align: text-top;
-  height: 6em;
-  padding-left: 8px;
-  position: relative;
 }
 
-.homelink {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+.pure-menu-link {
+  color: #fff;
+}
+
+.pure-menu-heading {
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.pure-menu-link:hover {
+  color: #2D9EE4;
 }
 
 .homelink a:link, .homelink a:visited {
   float: right;
   text-decoration: none;
   color: #fff;
-}
-
-.logo {
-  font-size: 2.5em;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 .bold {

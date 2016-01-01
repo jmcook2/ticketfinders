@@ -1,11 +1,17 @@
 <h1>Listing Competitions</h1>
 
-<%= link_to 'New competition', new_admin_competition_path %>
+<%= link_to 'New competition', new_admin_competition_path, class: "pure-button" %>
 
-<table>
+<br />
+<br />
+
+<table class="pure-table pure-table-striped pure-table-horizontal">
   <tr>
     <th>Name</th>
     <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
   <% @competitions.each do |competition| %>

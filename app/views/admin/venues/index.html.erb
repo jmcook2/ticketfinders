@@ -1,13 +1,19 @@
 <h1>Listing Venues</h1>
 
-<%= link_to 'New venue', new_admin_venue_path %>
+<%= link_to 'New venue', new_admin_venue_path, class: "pure-button" %>
 
-<table>
+<br />
+<br />
+
+<table class="pure-table pure-table-striped pure-table-horizontal">
   <tr>
     <th>Name</th>
     <th>Capacity</th>
     <th>City</th>
     <th>Country</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
   <% @venues.each do |venue| %>
