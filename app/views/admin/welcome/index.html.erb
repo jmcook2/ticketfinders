@@ -1,35 +1,44 @@
-<%= link_to 'Categories', controller: 'categories' %><br />
-
-<% @categories.each do |category| %>
-  <%= category.description %> <br />
-<% end %><br />
-
-<%= link_to 'Competitions', controller: 'competitions' %><br />
-
-<% @competitions.each do |competition| %>
-  <%= competition.name %> <br />
-<% end %><br />
-
-<%= link_to 'Events', controller: 'events' %><br />
-
-<% @events.each do |event| %>
-  <%= event.name %> <br />
-<% end %><br />
-
-<%= link_to 'Players', controller: 'players' %><br />
-
-<% @players.each do |player| %>
-  <%= player.name %> <br />
-<% end %><br />
-
-<%= link_to 'Tickets', controller: 'tickets' %><br />
-
-<% @tickets.each do |ticket| %>
-  <%= ticket.event_id %> <br />
-<% end %><br />
-
-<%= link_to 'Venues', controller: 'venues' %><br />
-
-<% @venues.each do |venue| %>
-  <%= venue.name %> <br />
-<% end %><br />
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="l-box">
+      <h3><%= link_to 'Categories', controller: 'categories' %></h3>
+      <p class="count"><%= @categories.count %></p>
+      <p><span class="bold"><%= @categories.last.description %></span> added <%= time_ago_in_words(@categories.last.created_at) %> ago</p>
+    </div>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="l-box">
+      <h3><%= link_to 'Competitions', controller: 'competitions' %></h3>
+      <p class="count"><%= @competitions.count %></p>
+      <p><span class="bold"><%= @competitions.last.name %></span> added <%= time_ago_in_words(@competitions.last.created_at) %> ago</p>
+    </div>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="l-box">
+      <h3><%= link_to 'Events', controller: 'events' %></h3>
+      <p class="count"><%= @events.count %></p>
+      <p><span class="bold"><%= @events.last.name %></span> added <%= time_ago_in_words(@events.last.created_at) %> ago</p>
+    </div>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="l-box">
+      <h3><%= link_to 'Players', controller: 'players' %></h3>
+      <p class="count"><%= @players.count %></p>
+      <p><span class="bold"><%= @players.last.name %></span> added <%= time_ago_in_words(@players.last.created_at) %> ago</p>
+    </div>
+  </div>
+    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="l-box">
+      <h3><%= link_to 'Tickets', controller: 'tickets' %></h3>
+      <p class="count"><%= @tickets.count %></p>
+      <p>Tickets for <span class="bold"><%= @tickets.last.event.name %></span> added <%= time_ago_in_words(@tickets.last.created_at) %> ago</p>
+    </div>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+    <div class="l-box">
+      <h3><%= link_to 'Venues', controller: 'venues' %></h3>
+      <p class="count"><%= @venues.count %></p>
+      <p><span class="bold"><%= @venues.last.name %></span> added <%= time_ago_in_words(@venues.last.created_at) %> ago</p>
+    </div>
+  </div>
+</div>

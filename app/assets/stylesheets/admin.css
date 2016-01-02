@@ -1,5 +1,3 @@
-*{margin: 0; padding: 0;}
-
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -20,6 +18,16 @@ body {
 
 .pure-menu-link:hover {
   color: #2D9EE4;
+}
+
+.l-box {
+  border: 1px solid #ccc;
+  padding: 1em;
+  text-align: center;
+}
+
+.count {
+  font-size: 3em;
 }
 
 .bold {
