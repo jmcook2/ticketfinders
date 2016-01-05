@@ -5,22 +5,22 @@
 
 <p>
   <strong>Start time:</strong>
-  <%= @event.start_time %>
+  <%= @event.start_time.strftime("%a, %d-%b-%Y at %I:%M%p") %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @event.end_time %>
+  <%= @event.end_time.strftime("%a, %d-%b-%Y at %I:%M%p") %>
 </p>
 
 <p>
   <strong>Venue:</strong>
-  <%= @event.venue_id %>
+  <%= Venue.find(@event.venue_id).name %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @event.category_id %>
+  <%= Category.find(@event.category_id).description %>
 </p>
 
 <p>

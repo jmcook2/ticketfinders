@@ -17,7 +17,7 @@
   <% @competitions.each do |competition| %>
     <tr>
       <td><%= competition.name %></td>
-      <td><%= competition.category_id %></td>
+      <td><%= Category.find(competition.category_id).description %></td>
       <td><%= link_to 'Show', admin_competition_path(competition) %></td>
       <td><%= link_to 'Edit', edit_admin_competition_path(competition) %></td>
       <td><%= link_to 'Destroy', admin_competition_path(competition),

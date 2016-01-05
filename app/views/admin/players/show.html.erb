@@ -5,7 +5,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @player.category_id %>
+  <%= Category.find(@player.category_id).description %>
 </p>
 
 <%= link_to 'Edit', edit_admin_player_path(@player) %> |

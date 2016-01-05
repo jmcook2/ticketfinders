@@ -1,6 +1,6 @@
 <p>
   <strong>Event:</strong>
-  <%= @ticket.event_id %>
+  <%= Event.find(@ticket.event_id).name %>
 </p>
 
 <p>

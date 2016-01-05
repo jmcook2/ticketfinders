@@ -20,10 +20,10 @@
   <% @events.each do |event| %>
     <tr>
       <td><%= event.name %></td>
-      <td><%= event.start_time %></td>
-      <td><%= event.end_time %></td>
-      <td><%= event.venue_id %></td>
-      <td><%= event.category_id %></td>
+      <td><%= event.start_time.strftime("%a, %d-%b-%Y at %I:%M%p") %></td>
+      <td><%= event.end_time.strftime("%a, %d-%b-%Y at %I:%M%p") %></td>
+      <td><%= Venue.find(event.venue_id).name %></td>
+      <td><%= Category.find(event.category_id).description %></td>
       <td><%= link_to 'Show', admin_event_path(event) %></td>
       <td><%= link_to 'Edit', edit_admin_event_path(event) %></td>
       <td><%= link_to 'Destroy', admin_event_path(event),
