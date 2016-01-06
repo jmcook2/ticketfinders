@@ -39,6 +39,11 @@
     <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description, prompt: true) %>
   </p>
 
+  <p>
+    <%= f.label :competition_id %><br>
+    <%= f.collection_select(:competition_id, Competition.order('name ASC'), :id, :name, prompt: true) %>
+  </p>
+
   <!-- habtm addition -->
 
   <p>

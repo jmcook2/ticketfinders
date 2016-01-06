@@ -23,12 +23,29 @@
   <%= Category.find(@event.category_id).description %>
 </p>
 
-<p>
-  <strong>Players:</strong><br />
-  <% @event.players.each do |player| %>
-    <%= player.name %><br />
-  <% end %>
-</p>
+<% if @event.competition_id != nil %>
+  <p>
+    <strong>Competition:</strong>
+    <%= Competition.find(@event.competition_id).name %>
+  </p>
+  <% else %>
+  <p>
+    This event doesn't have a competition.
+  </p>
+<% end %>
+
+<% if @event.players.count != 0 %>
+  <p>
+    <strong>Players:</strong><br />
+    <% @event.players.each do |player| %>
+      <%= player.name %><br />
+    <% end %>
+  </p>
+  <% else %>
+  <p>
+    This event doesn't have any players.
+  </p>
+<% end %>
 
 <p>
   <%= image_tag(@event.avatar.thumb.url) %>
