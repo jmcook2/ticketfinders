@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ticket-finders</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Ticket-finders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+  <!-- Top Bar -->
+  <div class="contain-to-grid fixed">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h2><%= link_to "ticketfinders", root_url %></h2>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span></span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+      <ul class="right">
+        <li class="divider"></li>
+        <li><a href="#">HELP</a></li>
+        <li class="divider"></li>
+        <li><a href="#">FIND EVENTS</a></li>
+        <li class="divider"></li>
+      </ul>
+      </section>
+    </nav>
+  </div>
+  <!-- / Top Bar -->
 
-</body>
+  <%= yield %>
+
+  </body>
 </html>
