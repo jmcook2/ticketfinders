@@ -1469,7 +1469,7 @@ $white       : #FFFFFF;
 // $topbar-media-query: "#{$screen} and (min-width:#{lower-bound($topbar-breakpoint)})";
 
 // Top-bar input styles
-// $topbar-input-height: rem-calc(28);
+   $topbar-input-height: rem-calc(32);
 
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 13%);
