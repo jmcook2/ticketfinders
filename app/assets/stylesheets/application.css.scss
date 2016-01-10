@@ -16,7 +16,20 @@
 
  */
 
+ @import 'foundation-icons';
+
  .top-bar .name a { color: #2D669A !important; }
+
+ /* Add more browser kits for these */
+ ::-webkit-input-placeholder {
+   font-weight: 100;
+   text-align: center;
+ }
+
+ :focus::-webkit-input-placeholder {
+   color: #BEBEBE;
+   text-align: left;
+ }
 
 /*
 Light grey background
