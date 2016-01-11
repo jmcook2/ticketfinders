@@ -18,6 +18,23 @@
     color:#FFFFFF;
 }
 
+.grey-bg {
+    background-color: #FBFBFB;
+    padding: 60px 0 60px 0;
+    position: relative;
+    text-align: center;
+}
+
+ .tiles {
+    border: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    height: 180px;
+}
+
+.inner-tile {
+    padding: 25px;
+}
+
 .headline {
     color: #2D669A;
     font-family: 'gotham-bold';
