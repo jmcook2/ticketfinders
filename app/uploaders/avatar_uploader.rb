@@ -14,10 +14,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # Create different versions of your images:
-  version :thumb do
-    process resize_to_fill: [400, 200]
-    # resize_to_limit
+  process resize_to_fill: [400, 200]
+
+  version :tiny do
+    process resize_to_fill: [160, 100]
   end
 
 end

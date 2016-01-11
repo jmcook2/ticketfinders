@@ -52,7 +52,7 @@
   </p>
 
   <!-- if image already exists for this event, show image -->
-  <%= image_tag(@event.avatar.thumb.url) if @event.avatar? %>
+  <%= image_tag(@event.avatar.url) if @event.avatar? %>
 
   <p>
     <%= f.label :avatar, "Image" %>

@@ -9,3 +9,64 @@
   </div>
 
 </section>
+
+<div class="row">
+  <div class="small-12 columns">&nbsp;</div>
+</div>
+
+<div class="row">
+  <h5><div class="small-12 columns headline">Sports</div></h5>
+</div>
+<div class="row">
+  <div class="small-12 medium-9 columns greyed">
+    <div class="row">
+      <div class="small-12 medium-6 columns no-pad">
+        <%= image_tag(@events[0].avatar.url) %>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <h5 class="gotham-bold"><%= @events[0].name %></h5>
+        <p>
+          <%= @events[0].start_time.strftime("%A %C %b %l:%m%p") %><br />
+          <%= @events[0].venue.name %><br />
+          Tickets available: <%= @events[0].tickets.sum(:quantity) %><br />
+          Starting at: <%= @events[0].tickets.minimum(:price) %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-3 columns greyed">
+    <%= image_tag(@events[1].avatar.tiny.url) %><br />
+    <%= @events[1].name %><br />
+    <%= @events[1].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= @events[1].venue.name %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-3 columns greyed">sporty event</div>
+  <div class="small-12 medium-3 columns greyed">sporty event</div>
+  <div class="small-12 medium-3 columns greyed">sporty event</div>
+  <div class="small-12 medium-3 columns greyed">sporty event</div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns spacer">&nbsp;</div>
+</div>
+
+<div class="row">
+  <h5><div class="small-12 columns headline">Music</div></h5>
+</div>
+<div class="row">
+  <div class="small-12 medium-9 columns greyed">music event</div>
+  <div class="small-12 medium-3 columns greyed">music event</div>
+</div>
+<div class="row">
+  <div class="small-12 medium-6 columns greyed">music event</div>
+  <div class="small-12 medium-3 columns greyed">music event</div>
+  <div class="small-12 medium-3 columns greyed">music event</div>
+</div>
+<div class="row">
+  <div class="small-12 medium-6 columns greyed">music event</div>
+</div>
+<div class="row">
+  <div class="small-12 medium-6 columns greyed">music event</div>
+</div>
