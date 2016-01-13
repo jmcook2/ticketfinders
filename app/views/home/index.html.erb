@@ -6,9 +6,18 @@
     </div>
   </div>
   <div class="row">
-    <div class="small-12 small-centered text-center medium-6 large-6 columns">
-      <input type="text" placeholder="Search for an artist, team or city" />
-    </div>
+    <div class="small-12 small-centered text-center medium-7 large-6 columns">
+      <div class="row collapse">
+        <div class="small-1 columns">
+          <span class="prefix custom-prefix">
+            <i class="fi-magnifying-glass"></i>
+          </span>
+        </div>
+        <div class="small-11 columns">
+          <input type="text" class="hero-input" placeholder="Search for an artist, team or city">
+        </div>
+        </div>
+      </div>
   </div>
 
 </section>
@@ -16,49 +25,37 @@
 <section class="grey-bg">
 
   <div class="row">
-    <div class="small-6 medium-6 large-3 columns tiles">
+    <div class="small-6 medium-6 large-4 columns tiles">
       <div class="inner-tile">
         <p>Category</p>
         <p>Icon</p>
       </div>
     </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
+    <div class="small-6 medium-6 large-4 columns tiles">
       <div class="inner-tile">
         <p>Category</p>
         <p>Icon</p>
       </div>
     </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
+    <div class="small-6 medium-6 large-4 columns tiles">
       <div class="inner-tile">
         <p>Category</p>
         <p>Icon</p>
       </div>
     </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
+    <div class="small-6 medium-6 large-4 columns tiles">
       <div class="inner-tile">
         <p>Category</p>
         <p>Icon</p>
       </div>
     </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
+    <div class="small-6 medium-6 large-4 columns tiles">
       <div class="inner-tile">
         <p>Category</p>
         <p>Icon</p>
       </div>
     </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
-      <div class="inner-tile">
-        <p>Category</p>
-        <p>Icon</p>
-      </div>
-    </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
-      <div class="inner-tile">
-        <p>Category</p>
-        <p>Icon</p>
-      </div>
-    </div>
-    <div class="small-6 medium-6 large-3 columns tiles">
+    <div class="small-6 medium-6 large-4 columns tiles">
       <div class="inner-tile">
         <p>Category</p>
         <p>Icon</p>
@@ -100,10 +97,30 @@
   </div>
 </div>
 <div class="row">
-  <div class="small-12 medium-3 columns greyed">sporty event</div>
-  <div class="small-12 medium-3 columns greyed">sporty event</div>
-  <div class="small-12 medium-3 columns greyed">sporty event</div>
-  <div class="small-12 medium-3 columns greyed">sporty event</div>
+  <div class="small-12 medium-3 columns greyed">
+    <%= image_tag(@events[3].avatar.tiny.url) %><br />
+    <%= @events[3].name %><br />
+    <%= @events[3].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= @events[3].venue.name %>
+  </div>
+  <div class="small-12 medium-3 columns greyed">
+    <%= image_tag(@events[4].avatar.tiny.url) %><br />
+    <%= @events[4].name %><br />
+    <%= @events[4].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= @events[4].venue.name %>
+  </div>
+  <div class="small-12 medium-3 columns greyed">
+    <%= image_tag(@events[5].avatar.tiny.url) %><br />
+    <%= @events[5].name %><br />
+    <%= @events[5].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= @events[5].venue.name %>
+  </div>
+  <div class="small-12 medium-3 columns greyed">
+    <%= image_tag(@events[2].avatar.tiny.url) %><br />
+    <%= @events[2].name %><br />
+    <%= @events[2].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= @events[2].venue.name %>
+  </div>
 </div>
 
 <div class="row">
@@ -112,19 +129,4 @@
 
 <div class="row">
   <h5><div class="small-12 columns headline">Music</div></h5>
-</div>
-<div class="row">
-  <div class="small-12 medium-9 columns greyed">music event</div>
-  <div class="small-12 medium-3 columns greyed">music event</div>
-</div>
-<div class="row">
-  <div class="small-12 medium-6 columns greyed">music event</div>
-  <div class="small-12 medium-3 columns greyed">music event</div>
-  <div class="small-12 medium-3 columns greyed">music event</div>
-</div>
-<div class="row">
-  <div class="small-12 medium-6 columns greyed">music event</div>
-</div>
-<div class="row">
-  <div class="small-12 medium-6 columns greyed">music event</div>
 </div>
