@@ -40,6 +40,20 @@
 .hero-input { background-color: #FFFFFF !important; border-left: none !important; }
 .custom-prefix { border-right: none !important; }
 .hero-input::-webkit-input-placeholder { text-align: left; }
+
+/* Fix overlapping borders based on screen size (homepage category grid)*/
+/* EXTREMELY HACKY, FIND PERMANENT SOLUTION ASAP */
+@media only screen {
+    .tiles:nth-child(1) { border-right: none; border-bottom: none; }
+    .tiles:nth-child(3) { border-right: none; }
+    .tiles:nth-child(2) { border-bottom: none; }
+}
+@media only screen and (min-width: 64.063em) {
+    .tiles:nth-child(1) { border-right: none; border-bottom: 1px solid #D6D6D6 !important; }
+    .tiles:nth-child(2) { border-right: none; border-bottom: 1px solid #D6D6D6 !important; }
+    .tiles:nth-child(3) { border-right: none; }
+}
+
 /*add this to homepage hero class for image
 background: url("path to image") repeat scroll 0 0 #074E68;
 */
