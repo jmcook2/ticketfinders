@@ -44,6 +44,16 @@
     <%= f.collection_select(:competition_id, Competition.order('name ASC'), :id, :name, prompt: true) %>
   </p>
 
+  <p>
+    <%= f.label :sports, 'Is this event a sport?' %>
+    <%= f.check_box :sports %>
+  </p>
+
+  <p>
+    <%= f.label :priority, 'Do you want to prioritize this event?' %>
+    <%= f.check_box :priority %>
+  </p>
+
   <!-- habtm addition -->
 
   <p>
