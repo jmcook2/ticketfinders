@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories, only: [:show, :index]
+
   # get 'venues/index'
   # get 'tickets/index'
   # get 'players/index'

@@ -1,5 +1,6 @@
  #homepage-hero {
-    background-color: #2D669A;
+    background: url("banner.jpg") repeat scroll 0 0 #2D669A;
+    /*background-color: #2D669A;*/
     height: 380px;
     padding: 100px 20px 0;
     position: relative;
@@ -16,7 +17,7 @@
     color:#FFFFFF;
 }
 .grey-bg {
-    background-color: #FBFBFB;
+    background-color: #F7F7F7;
     padding: 60px 30px 60px 30px;
     position: relative;
     text-align: center;
