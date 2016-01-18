@@ -22,7 +22,7 @@
 
 </section>
 
-<section class="grey-bg">
+<section class="categories-bg">
 
   <div class="row">
     <div class="small-6 medium-6 large-3 columns tiles">
@@ -30,8 +30,7 @@
         <div class="row">
            <div class="small-12 columns">&nbsp;</div>
         </div>
-        <p><i class="fi-music"></i></p>
-        <p>Sports</p>
+        <p><%= link_to (image_tag 'SportBlue.svg'), root_url, class: "category-icons" %></p>
       </div>
     </div>
     <div class="small-6 medium-6 large-3 columns tiles">
@@ -39,8 +38,7 @@
         <div class="row">
           <div class="small-12 columns">&nbsp;</div>
         </div>
-        <p><i class="fi-music"></i></p>
-        <p>Theatre</p>
+        <p><%= link_to (image_tag 'TheaterBlue.svg'), root_url, class: "category-icons" %></p>
       </div>
     </div>
     <div class="small-6 medium-6 large-3 columns tiles">
@@ -48,8 +46,7 @@
         <div class="row">
           <div class="small-12 columns">&nbsp;</div>
         </div>
-        <p><i class="fi-music"></i></p>
-        <p>Opera</p>
+        <p><%= link_to (image_tag 'OperaBlue.svg'), root_url, class: "category-icons" %></p>
       </div>
     </div>
     <div class="small-6 medium-6 large-3 columns tiles">
@@ -57,8 +54,7 @@
         <div class="row">
           <div class="small-12 columns">&nbsp;</div>
         </div>
-        <p><i class="fi-music"></i></p>
-        <p>Concerts</p>
+        <p><%= link_to (image_tag 'ConcertsBlue.svg'), root_url, class: "category-icons" %></p>
       </div>
     </div>
   </div>
@@ -81,7 +77,7 @@
       <div class="small-12 medium-6 columns">
         <h5 class="gotham-bold"><%= @sports[0].name %></h5>
         <p>
-          <%= @sports[0].start_time.strftime("%A %C %b %l:%m%p") %><br />
+          <%= nice_time(@sports[0].start_time) %><br />
           <%= @sports[0].venue.name %><br />
           Tickets available: <%= @sports[0].tickets.sum(:quantity) %><br />
           Starting at: <%= @sports[0].tickets.minimum(:price) %>
@@ -92,7 +88,7 @@
   <div class="small-12 medium-3 columns greyed">
     <%= image_tag(@sports[1].avatar.tiny.url) %><br />
     <%= @sports[1].name %><br />
-    <%= @sports[1].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= nice_time(@sports[1].start_time) %><br />
     <%= @sports[1].venue.name %>
   </div>
 </div>
@@ -100,25 +96,25 @@
   <div class="small-12 medium-3 columns greyed">
     <%= image_tag(@sports[3].avatar.tiny.url) %><br />
     <%= @sports[3].name %><br />
-    <%= @sports[3].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= nice_time(@sports[3].start_time) %><br />
     <%= @sports[3].venue.name %>
   </div>
   <div class="small-12 medium-3 columns greyed">
     <%= image_tag(@sports[4].avatar.tiny.url) %><br />
     <%= @sports[4].name %><br />
-    <%= @sports[4].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= nice_time(@sports[4].start_time) %><br />
     <%= @sports[4].venue.name %>
   </div>
   <div class="small-12 medium-3 columns greyed">
     <%= image_tag(@sports[5].avatar.tiny.url) %><br />
     <%= @sports[5].name %><br />
-    <%= @sports[5].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= nice_time(@sports[5].start_time) %><br />
     <%= @sports[5].venue.name %>
   </div>
   <div class="small-12 medium-3 columns greyed">
     <%= image_tag(@sports[2].avatar.tiny.url) %><br />
     <%= @sports[2].name %><br />
-    <%= @sports[2].start_time.strftime("%a %C %b %l:%m%p") %><br />
+    <%= nice_time(@sports[2].start_time) %><br />
     <%= @sports[2].venue.name %>
   </div>
 </div>
