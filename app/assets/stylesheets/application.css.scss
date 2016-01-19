@@ -35,3 +35,34 @@
  }
  .greyed { background-color: #F7F7F7; }
  .blued { background-color: #2D669A; }
+
+/* Footer styling */
+.full-width { max-width: 1400px; }
+.footer {
+  background-color: #2D669A;
+  padding: 2rem 4rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+.footer .big { font-size: 60px; }
+.footer .small-icon { font-size: 30px; }
+.footer h4 {
+  color: #FFFFFF;
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+  margin-bottom: 10px;
+}
+.footer p, .footer a {
+  font-weight: 300;
+  font-size: .8em;
+  color: #FFFFFF;
+}
+@media only screen and (min-width: 40.063em) {
+  .footer .columns:nth-child(n+2) {
+    border-left: 1px solid #b3b3b3;
+    min-height: 280px;
+  }
+}
+.footer h5 { margin-top: .5em; }

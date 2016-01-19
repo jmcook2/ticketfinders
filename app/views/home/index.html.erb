@@ -71,7 +71,7 @@
 <div class="row">
   <div class="small-12 medium-9 columns greyed">
     <div class="row">
-      <div class="small-12 medium-6 columns no-pad">
+      <div class="small-12 medium-6 columns">
         <%= image_tag(@sports[0].avatar.url) %>
       </div>
       <div class="small-12 medium-6 columns">
@@ -126,17 +126,13 @@
 <div class="row">
   <h5><div class="small-12 columns headline">Music</div></h5>
 </div>
+
 <div class="row">
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[3].avatar.tiny.url) %>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[3].avatar.tiny.url) %>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[3].avatar.tiny.url) %>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[3].avatar.tiny.url) %>
-  </div>
+  <ul class="small-block-grid-1 medium-block-grid-4">
+    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
+    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
+    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
+    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
+  </ul>
 </div>
+
