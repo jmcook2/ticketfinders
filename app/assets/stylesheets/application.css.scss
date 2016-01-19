@@ -35,7 +35,16 @@
  }
  .greyed { background-color: #F7F7F7; }
  .blued { background-color: #2D669A; }
-
+/* SVG manipulation on hover */
+.change-icon > span:nth-child(2) {
+  display: none;
+}
+.change-icon:hover > span:nth-child(1) {
+  display: none;
+}
+.change-icon:hover > span:nth-child(2) {
+  display: inherit;
+}
 /* Footer styling */
 .full-width { max-width: 1400px; }
 .footer {
