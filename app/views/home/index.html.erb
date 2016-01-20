@@ -74,61 +74,43 @@
 </section>
 
 <div class="row">
-  <div class="small-12 columns">&nbsp;</div>
+  <div class="small-12 columns spacer">&nbsp;</div>
 </div>
 
 <div class="row">
   <h5><div class="small-12 columns headline">Sports</div></h5>
 </div>
+
 <div class="row">
-  <div class="small-12 medium-9 columns greyed">
-    <div class="row">
-      <div class="small-12 medium-6 columns">
-        <%= image_tag(@sports[0].avatar.url) %>
-      </div>
-      <div class="small-12 medium-6 columns">
-        <h5 class="gotham-bold"><%= @sports[0].name %></h5>
-        <p>
-          <%= nice_time(@sports[0].start_time) %><br />
-          <%= @sports[0].venue.name %><br />
-          Tickets available: <%= @sports[0].tickets.sum(:quantity) %><br />
-          Starting at: <%= @sports[0].tickets.minimum(:price) %>
+  <ul class="small-block-grid-1 medium-block-grid-3 text-center">
+    <li>
+      <%= image_tag(@sports[0].avatar.url) %>
+      <span class="medium-text-left">
+        <p class="gotham-regular blue">
+          <%= @sports[0].name %><br />
+          <%= @sports[0].venue.name %>
         </p>
-      </div>
-    </div>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[1].avatar.tiny.url) %><br />
-    <%= @sports[1].name %><br />
-    <%= nice_time(@sports[1].start_time) %><br />
-    <%= @sports[1].venue.name %>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[3].avatar.tiny.url) %><br />
-    <%= @sports[3].name %><br />
-    <%= nice_time(@sports[3].start_time) %><br />
-    <%= @sports[3].venue.name %>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[4].avatar.tiny.url) %><br />
-    <%= @sports[4].name %><br />
-    <%= nice_time(@sports[4].start_time) %><br />
-    <%= @sports[4].venue.name %>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[5].avatar.tiny.url) %><br />
-    <%= @sports[5].name %><br />
-    <%= nice_time(@sports[5].start_time) %><br />
-    <%= @sports[5].venue.name %>
-  </div>
-  <div class="small-12 medium-3 columns greyed">
-    <%= image_tag(@sports[2].avatar.tiny.url) %><br />
-    <%= @sports[2].name %><br />
-    <%= nice_time(@sports[2].start_time) %><br />
-    <%= @sports[2].venue.name %>
-  </div>
+      </span>
+    </li>
+    <li>
+      <%= image_tag(@sports[1].avatar.url) %>
+      <span class="medium-text-left">
+        <p class="gotham-regular blue">
+          <%= @sports[1].name %><br />
+          <%= @sports[1].venue.name %>
+        </p>
+      </span>
+    </li>
+    <li>
+      <%= image_tag(@sports[2].avatar.url) %>
+      <span class="medium-text-left">
+        <p class="gotham-regular blue">
+          <%= @sports[2].name %><br />
+          <%= @sports[2].venue.name %>
+        </p>
+      </span>
+    </li>
+  </ul>
 </div>
 
 <div class="row">
@@ -140,11 +122,30 @@
 </div>
 
 <div class="row">
-  <ul class="small-block-grid-1 medium-block-grid-4">
-    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
-    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
-    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
-    <li><%= image_tag(@sports[2].avatar.tiny.url) %></li>
+  <ul class="small-block-grid-1 medium-block-grid-3 text-center">
+    <li>
+      <%= image_tag(@music[0].avatar.url) %>
+      <span class="medium-text-left">
+        <p><%= @music[0].name %><br />
+        <%= nice_time(@music[0].start_time) %></p>
+      </span>
+    </li>
+    <li>
+      <%= image_tag(@music[1].avatar.url) %>
+      <span class="medium-text-left">
+        <p><%= @music[1].name %><br />
+        <%= nice_time(@music[1].start_time) %></p>
+      </span>
+    </li>
+    <li>
+      <%= image_tag(@music[2].avatar.url) %>
+      <span class="medium-text-left">
+        <p><%= @music[2].name %><br />
+        <%= nice_time(@music[2].start_time) %></p>
+      </span>
+    </li>
   </ul>
 </div>
+
+
 

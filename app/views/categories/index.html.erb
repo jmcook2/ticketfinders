@@ -1,5 +1,12 @@
-content
-<% @categories.each do |category| %>
-  <%= link_to 'Show', category_path(category) %><br />
-<% end %>
+<section class="grey-bg">
+
+  <div class="row greyed">
+    <div class="small-12 columns">
+      <% @categories.each do |category| %>
+        <%= link_to "#{category.description}", category_path(category) %><br />
+      <% end %>
+    </div>
+  </div>
+
+</section>
 
