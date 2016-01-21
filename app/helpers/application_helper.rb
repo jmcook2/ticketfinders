@@ -15,4 +15,13 @@ module ApplicationHelper
     raw doc
   end
 
+  def has_icon?(category)
+    @stripped = category.gsub(/\s+/, '')
+    if Rails.application.assets.find_asset("#{@stripped}Blue.svg") && Rails.application.assets.find_asset("#{@stripped}Grey.svg")
+      return @stripped
+    else
+      return false
+    end
+  end
+
 end

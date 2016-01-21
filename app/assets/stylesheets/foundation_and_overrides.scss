@@ -408,7 +408,7 @@ $white       : #FFFFFF;
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to set the background color for the breadcrumb container.
-// $crumb-bg: scale-color($secondary-color, $lightness: 55%);
+   $crumb-bg: #F7F7F7;
 
 // We use these to set the padding around the breadcrumbs.
 // $crumb-padding: rem-calc(9 14 9);
@@ -418,8 +418,8 @@ $white       : #FFFFFF;
 // $crumb-function-factor: -10%;
 // $crumb-border-size: 1px;
 // $crumb-border-style: solid;
-// $crumb-border-color: scale-color($crumb-bg, $lightness: $crumb-function-factor);
-// $crumb-radius: $global-radius;
+   $crumb-border-color: #D6D6D6;
+   $crumb-radius: 0;
 
 // We use these to set various text styles for breadcrumbs.
 // $crumb-font-size: rem-calc(11);
