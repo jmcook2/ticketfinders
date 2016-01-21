@@ -1,5 +1,13 @@
-<h1><%= @category.description %></h1>
+<div class="row">
+  <h1 class="gotham-regular"><%= @category.description %></h1>
+</div>
 
-<% @events.each do |event| %>
-  <%= event.name %>
-<% end %>
+<section class="grey-bg">
+
+  <div class="row">
+    <% @events.each do |event| %>
+      <%= event.name %><br />
+    <% end %>
+  </div>
+
+</section>

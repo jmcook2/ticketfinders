@@ -15,8 +15,10 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-        <h1 class="show-for-small-up hide-for-large-up" style="padding-left: 10px;"><%= image_tag("logo_icon.svg", width: '47', height: '47') %></h1>
+        <%= link_to(root_url) do %>
+          <h1 class="show-for-small-up hide-for-large-up" style="padding-left: 10px;"><%= image_tag("logo_icon.svg", width: '47', height: '47') %></h1>
           <h1 class="show-for-large-up"><%= image_tag("logo.svg", width: '340', height: '340') %></h1>
+        <% end %>
         </li>
         <li class="toggle-topbar menu-icon">
           <a href="#"><span></span></a>

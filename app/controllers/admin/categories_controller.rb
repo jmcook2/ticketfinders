@@ -48,7 +48,7 @@ class Admin::CategoriesController < AdminController
   private
 
   def category_params
-    params.require(:category).permit(:description)
+    params.require(:category).permit(:description, :sports)
   end
 
 end
