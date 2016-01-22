@@ -17,6 +17,7 @@
           <div class="row">
              <div class="small-12 columns">&nbsp;</div>
           </div>
+          <%= link_to category_path(category) do %>
           <p class="change-icon">
             <% if has_icon?(category.description) != false %>
               <span><%= embedded_svg("#{has_icon?(category.description)}Blue.svg") %></span>
@@ -25,6 +26,7 @@
               <h5 class="gotham-regular" style="color: #2D669A;"><%= category.description %></h5>
             <% end %>
           </p>
+          <% end %>
         </div>
       </div>
     <% end %>

@@ -65,7 +65,7 @@
     .tiles:nth-child(2) { border-right: none; border-bottom: 1px solid #D6D6D6 !important; }
     .tiles:nth-child(3) { border-right: none; }
 }
-
-/*add this to homepage hero class for image
-background: url("path to image") repeat scroll 0 0 #074E68;
-*/
+.event-tile {
+    padding: 10px;
+    border: 1px solid #D6D6D6;
+}

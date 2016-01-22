@@ -11,15 +11,37 @@
 </div>
 
 <div class="row">
-  <h1 class="gotham-regular"><%= @category.description %></h1>
+  <h3 class="gotham-regular"><%= @category.description %></h3>
 </div>
 
-<section class="grey-bg">
+<% if @competitions.count > 0 %>
 
-  <div class="row">
-    <% @events.each do |event| %>
-      <%= event.name %><br />
+  <section class="grey-bg">
+    <% @competitions.each do |competition| %>
+      <div class="row">
+        <%= link_to competition.name, competition_path(competition) %><br />
+      </div>
     <% end %>
-  </div>
+  </section>
 
-</section>
+<% else %>
+
+  <section class="grey-bg">
+    <% @events.each do |event| %>
+      <div class="row event-tile">
+        <div class="small-12 medium-2 columns">
+          <%= image_tag(event.avatar.tiny.url) %>
+        </div>
+        <div class="small-12 medium-4 columns text-left">
+          <%= event.name %><br />
+          <%= nice_time(event.start_time) %><br />
+          <%= event.venue.name %>
+        </div>
+        <div class="small-12 medium-6 columns text-left">
+          <%= Ticket.where(event_id: event.id).sum(:quantity) %> Tickets available
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+<% end %>
