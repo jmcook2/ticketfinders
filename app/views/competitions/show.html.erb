@@ -25,6 +25,16 @@
     <% end %>
   </section>
 
+<% elsif @events.count > 0 %>
+
+  <section class="grey-bg">
+    <% @events.each do |event| %>
+      <div class="row">
+        <%= link_to event.name, event_path(event) %>
+      </div>
+    <% end %>
+  </section>
+
 <% else %>
 
   <section class="grey-bg">
