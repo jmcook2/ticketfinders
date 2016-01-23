@@ -27,19 +27,9 @@
 <% else %>
 
   <section class="grey-bg">
-    <% @events.each do |event| %>
-      <div class="row event-tile">
-        <div class="small-12 medium-2 columns">
-          <%= image_tag(event.avatar.tiny.url) %>
-        </div>
-        <div class="small-12 medium-4 columns text-left">
-          <%= event.name %><br />
-          <%= nice_time(event.start_time) %><br />
-          <%= event.venue.name %>
-        </div>
-        <div class="small-12 medium-6 columns text-left">
-          <%= Ticket.where(event_id: event.id).sum(:quantity) %> Tickets available
-        </div>
+    <% @players.each do |player| %>
+      <div class="row">
+        <%= link_to player.name, player_path(player) %>
       </div>
     <% end %>
   </section>

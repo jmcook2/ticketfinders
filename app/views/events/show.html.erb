@@ -2,6 +2,21 @@
   <div class="small-12 columns">&nbsp;</div>
 </div>
 
+<% if @competition && @player %>
+
+  <div class="row">
+    <ul class="breadcrumbs">
+      <li><%= link_to 'Home', root_url %></li>
+      <li><%= link_to 'Categories', categories_path %></li>
+      <li><%= link_to @category.description, category_path(@category) %></li>
+      <li><%= link_to @competition.name, competition_path(@competition) %></li>
+      <li><%= link_to @player.name, player_path(@player, :comp => @competition) %></li>
+      <li class="current"><%= @event.name %></li>
+    </ul>
+  </div>
+
+<% else %>
+
 <div class="row">
   <ul class="breadcrumbs">
     <li><%= link_to 'Home', root_url %></li>
@@ -10,6 +25,8 @@
     <li class="current"><%= @event.name %></li>
   </ul>
 </div>
+
+<% end %>
 
 <section class="grey-bg">
   <div class="row">

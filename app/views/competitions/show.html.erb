@@ -15,10 +15,22 @@
   <h3 class="gotham-regular"><%= @competition.name %></h3>
 </div>
 
-<section class="grey-bg">
-  <% @players.each do |player| %>
+<% if @players.count > 0 %>
+
+  <section class="grey-bg">
+    <% @players.each do |player| %>
+      <div class="row">
+        <%= link_to player.name, player_path(player, :comp => @competition) %>
+      </div>
+    <% end %>
+  </section>
+
+<% else %>
+
+  <section class="grey-bg">
     <div class="row">
-      <%= player.name %>
+      <h5>We don't currently have any events for this competition</h5>
     </div>
-  <% end %>
-</section>
+  </section>
+
+<% end %>

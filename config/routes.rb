@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
   resources :competitions, only: [:show, :index]
   resources :events, only: [:show]
+  resources :players, only: [:show]
 
   # get 'venues/index'
   # get 'tickets/index'
