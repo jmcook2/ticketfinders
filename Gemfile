@@ -14,6 +14,9 @@ gem 'mini_magick'
 # GeoLocation
 gem 'geocoder'
 
+# Javascript variable handling
+gem 'gon'
+
 gem 'foundation-rails', '~> 5.5.3.2'
 gem 'jquery-rails'
 gem 'turbolinks'

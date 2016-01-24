@@ -24,4 +24,12 @@ module ApplicationHelper
     end
   end
 
+  def title(text)
+    content_for :title, text
+  end
+
+  def gon(text)
+    content_for :gon, text
+  end
+
 end

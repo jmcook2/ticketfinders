@@ -4,6 +4,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @category = Category.find(@event.category_id)
     @category_description = Category.find(@event.category_id).description
+    gon.latitude = @event.venue.latitude
+    gon.longitude = @event.venue.longitude
     if params[:comp]
       @competition = Competition.find(params[:comp])
     elsif @event.competition_id != nil
