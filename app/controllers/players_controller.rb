@@ -16,13 +16,14 @@ class PlayersController < ApplicationController
           end
         end
       end
-    end
-    @all_events = Event.all
-    @events = []
-    @all_events.each do |event|
-      event.players.each do |player|
-        if @player == player
-          @events << event
+    else
+      @all_events = Event.all
+      @events = []
+      @all_events.each do |event|
+        event.players.each do |player|
+          if @player == player
+            @events << event
+          end
         end
       end
     end

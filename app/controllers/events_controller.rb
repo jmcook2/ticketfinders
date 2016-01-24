@@ -6,6 +6,8 @@ class EventsController < ApplicationController
     @category_description = Category.find(@event.category_id).description
     if params[:comp]
       @competition = Competition.find(params[:comp])
+    elsif @event.competition_id != nil
+      @competition = Competition.find(@event.competition_id)
     end
     if params[:player]
       @player = Player.find(params[:player])
