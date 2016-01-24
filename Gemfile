@@ -11,6 +11,9 @@ gem 'foundation-icons-sass-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# GeoLocation
+gem 'geocoder'
+
 gem 'foundation-rails', '~> 5.5.3.2'
 gem 'jquery-rails'
 gem 'turbolinks'

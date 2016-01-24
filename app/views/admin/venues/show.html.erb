@@ -18,5 +18,10 @@
   <%= @venue.country %>
 </p>
 
+<p>
+  <strong>Address:</strong>
+  <%= @venue.address %>
+</p>
+
 <%= link_to 'Edit', edit_admin_venue_path(@venue) %> |
 <%= link_to 'Back', admin_venues_path %>
