@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'static/sport'
+
   resources :categories, only: [:show, :index]
   resources :competitions, only: [:show, :index]
   resources :events, only: [:show]
