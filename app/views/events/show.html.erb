@@ -41,8 +41,24 @@
 
 <section class="grey-bg">
   <div class="row">
-    <div class="small-12 medium-6 columns">
+    <div class="small-6 columns">
       <%= image_tag @event.avatar.url %>
+    </div>
+    <div class="small-6 columns">
+      <h4><%= @event.name %></h4>
+      <ul class="event-show-list">
+        <li><%= @event.venue.name %></li>
+        <li><%= nice_time(@event.start_time) %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 columns bordered">
+      <% if @event.tickets.sum(:quantity) > 0 %>
+        Available Tickets: <%= @event.tickets.sum(:quantity) %><br />
+      <% else %>
+        There are no tickets for this event
+      <% end %>
     </div>
   </div>
 </section>
