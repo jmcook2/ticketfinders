@@ -54,15 +54,15 @@
 /* Footer styling */
 .full-width { max-width: 1400px; }
 .footer {
-  background-color: #2D669A;
+  background-color: #FFFFFF;
   padding: 2rem 4rem;
   text-align: center;
-  color: #FFFFFF;
+  color: #2D669A;
 }
-.footer .big { font-size: 60px; }
+.footer .big { font-size: 50px; }
 .footer .small-icon { font-size: 30px; }
 .footer h4 {
-  color: #FFFFFF;
+  color: #2D669A;
   font-size: 1em;
   font-weight: 400;
   text-transform: uppercase;
@@ -72,12 +72,13 @@
 .footer p, .footer a {
   font-weight: 300;
   font-size: .8em;
-  color: #FFFFFF;
+  color: #696969;
 }
-@media only screen and (min-width: 40.063em) {
+/* Uncomment to add vertical separators to footer sections */
+/*@media only screen and (min-width: 40.063em) {
   .footer .columns:nth-child(n+2) {
     border-left: 1px solid #b3b3b3;
     min-height: 280px;
   }
-}
+}*/
 .footer h5 { margin-top: .5em; }

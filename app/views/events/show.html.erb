@@ -51,42 +51,12 @@
   </div>
 </section>
 
-<div id="map"></div>
+<div class="map-container">
+  <div id="map"></div>
+  <span class="overlay-background">
+    <div class="map-text gotham-regular"><%= @event.venue.address %></div>
+  </span>
+</div>
 
-<script type="text/javascript">
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: gon.latitude, lng: gon.longitude},
-      zoom: 12,
-      scrollwheel: false,
-      navigationControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      draggable: false,
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 
-      styles: [{
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-        {
-          "color": "#ABC1D6"
-        }]
-      }]
-
-    });
-
-    var getCen = map.getCenter();
-    google.maps.event.addDomListener(window, 'resize', function() {
-      map.setCenter(getCen);
-    });
-
-    var marker = new google.maps.Marker({
-      position: {lat: gon.latitude, lng: gon.longitude},
-      map: map,
-    });
-  }
-</script>
-
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-</script>

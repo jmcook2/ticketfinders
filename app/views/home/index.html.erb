@@ -95,7 +95,7 @@
       <%= image_tag(@sports[0].avatar.url) %>
       <span class="medium-text-left">
         <p class="gotham-regular blue">
-          <%= link_to "#{@sports[0].name}", event_path(@sports[0]) %><br />
+          <%= link_to "#{@sports[0].name}", event_path(@sports[0]), data: { no_turbolink: true } %><br />
           <%= @sports[0].venue.name %>
         </p>
       </span>
@@ -104,7 +104,7 @@
       <%= image_tag(@sports[1].avatar.url) %>
       <span class="medium-text-left">
         <p class="gotham-regular blue">
-          <%= link_to "#{@sports[1].name}", event_path(@sports[1]) %><br />
+          <%= link_to "#{@sports[1].name}", event_path(@sports[1]), data: { no_turbolink: true } %><br />
           <%= @sports[1].venue.name %>
         </p>
       </span>
@@ -113,7 +113,7 @@
       <%= image_tag(@sports[2].avatar.url) %>
       <span class="medium-text-left">
         <p class="gotham-regular blue">
-          <%= link_to "#{@sports[2].name}", event_path(@sports[2]) %><br />
+          <%= link_to "#{@sports[2].name}", event_path(@sports[2]), data: { no_turbolink: true } %><br />
           <%= @sports[2].venue.name %>
         </p>
       </span>
@@ -135,7 +135,7 @@
       <%= image_tag(@music[0].avatar.url) %>
       <span class="medium-text-left">
         <p class="gotham-regular blue">
-          <%= link_to "#{@music[0].name}", event_path(@music[0]) %><br />
+          <%= link_to "#{@music[0].name}", event_path(@music[0]), data: { no_turbolink: true } %><br />
           <%= @music[0].venue.name %>
         </p>
       </span>
@@ -144,7 +144,7 @@
       <%= image_tag(@music[1].avatar.url) %>
       <span class="medium-text-left">
         <p class="gotham-regular blue">
-          <%= link_to "#{@music[1].name}", event_path(@music[1]) %><br />
+          <%= link_to "#{@music[1].name}", event_path(@music[1]), data: { no_turbolink: true } %><br />
           <%= @music[1].venue.name %>
         </p>
       </span>
@@ -153,7 +153,7 @@
       <%= image_tag(@music[2].avatar.url) %>
       <span class="medium-text-left">
         <p class="gotham-regular blue">
-          <%= link_to "#{@music[2].name}", event_path(@music[2]) %><br />
+          <%= link_to "#{@music[2].name}", event_path(@music[2]), data: { no_turbolink: true } %><br />
           <%= @music[2].venue.name %>
         </p>
       </span>
