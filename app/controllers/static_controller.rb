@@ -4,4 +4,7 @@ class StaticController < ApplicationController
     @categories = Category.where(sports: true)
   end
 
+  def terms
+  end
+
 end
