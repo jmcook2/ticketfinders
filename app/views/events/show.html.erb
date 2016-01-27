@@ -41,10 +41,10 @@
 
 <section class="grey-bg">
   <div class="row">
-    <div class="small-6 columns">
+    <div class="small-6 medium-5 columns" style="padding-left: 0;">
       <%= image_tag @event.avatar.url %>
     </div>
-    <div class="small-6 columns">
+    <div class="small-6 medium-7 columns">
       <h4><%= @event.name %></h4>
       <ul class="event-show-list">
         <li><%= @event.venue.name %></li>
@@ -56,27 +56,27 @@
   <div class="row">
     <div class="small-12 medium-8 columns white-bg">
       <% if @event.tickets.sum(:quantity) > 0 %>
-        <% @event.tickets.each do |ticket| %>
-          <div class="row">
-            <div class="small-3 columns">
-              <%= ticket.category %>
-            </div>
-            <div class="small-3 columns">
-              <%= ticket.quantity %>
-            </div>
-            <div class="small-3 columns">
-              <%= ticket.price %>
-            </div>
-            <div class="small-3 columns">
-              <%= link_to "Tickets", root_url, class: 'button success tiny' %>
-            </div>
-          </div>
-        <% end %>
+        <table role="grid">
+          <tr>
+            <th width="200" scope="column"><h4 class="gotham-regular">Category</h5></th>
+            <th width="200" scope="column"><h4 class="gotham-regular">Quantity</h4></th>
+            <th width="200" scope="column"><h4 class="gotham-regular">Price</h4></th>
+          </tr>
+          <% @event.tickets.each do |ticket| %>
+            <tr>
+              <td scope="row"><%= ticket.category %></td>
+              <td scope="row"><%= ticket.quantity %></td>
+              <td scope="row">&pound;<%= ticket.price.round %></td>
+              <td scope="row"><%= link_to 'Tickets', root_url, class: 'button success tiny' %></td>
+            </tr>
+          <% end %>
+        </table>
     </div>
   </div>
 
       <% else %>
-        <div class="row">
+
+        <div class="row" style="background-color: #F7F7F7;">
           <div class="small-12 columns">
             There are no tickets for this event
           </div>

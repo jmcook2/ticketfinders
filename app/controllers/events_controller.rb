@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+  def index
+    @events = Event.text_search(params[:query])
+  end
+
   def show
     @event = Event.find(params[:id])
     @category = Category.find(@event.category_id)

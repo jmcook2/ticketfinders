@@ -16,4 +16,12 @@ class Event < ActiveRecord::Base
   validates :sports, inclusion: { in: [true, false] }
   validates :priority, inclusion: { in: [true, false] }
 
+  def self.text_search(query)
+    if query.present?
+      where("name ilike :q", q: "%#{query}%")
+    else
+      scoped
+    end
+  end
+
 end

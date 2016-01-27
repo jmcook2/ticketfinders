@@ -1,0 +1,25 @@
+  <div class="row">
+    <ul class="breadcrumbs">
+      <li><%= link_to 'Home', root_url %></li>
+      <li class="current">Search Results</li>
+    </ul>
+  </div>
+
+<div class="row">
+  <h5 class="gotham-regular" style="color: #696969;">Found <%= pluralize @events.count, "Result" %></h5>
+</div>
+
+<section class="grey-bg">
+  <% @events.each do |event| %>
+    <div class="row event-tile">
+      <div class="small-6 medium-2 columns">
+        <%= image_tag(event.avatar.tiny.url) %>
+      </div>
+      <div class="small-6 medium-10 columns text-left">
+        <%= link_to event.name, event_path(event), data: { no_turbolink: true } %><br />
+        <%= nice_time(event.start_time) %><br />
+        <%= event.venue.name %>
+      </div>
+    </div>
+  <% end %>
+</section>

@@ -14,10 +14,12 @@
           </span>
         </div>
         <div class="small-11 columns">
-          <input type="text" class="hero-input" placeholder="Search for an artist, team or city">
-        </div>
+          <%= form_tag events_path, method: :get do  %>
+            <%= text_field_tag :query, params[:query], :placeholder => "Search for an artist, team or city", class: "hero-input" %>
+          <% end %>
         </div>
       </div>
+    </div>
   </div>
 
 </section>
