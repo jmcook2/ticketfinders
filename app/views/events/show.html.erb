@@ -52,15 +52,36 @@
       </ul>
     </div>
   </div>
+  <div class="row">&nbsp;</div>
   <div class="row">
-    <div class="small-12 medium-6 columns bordered">
+    <div class="small-12 medium-8 columns white-bg">
       <% if @event.tickets.sum(:quantity) > 0 %>
-        Available Tickets: <%= @event.tickets.sum(:quantity) %><br />
-      <% else %>
-        There are no tickets for this event
-      <% end %>
+        <% @event.tickets.each do |ticket| %>
+          <div class="row">
+            <div class="small-3 columns">
+              <%= ticket.category %>
+            </div>
+            <div class="small-3 columns">
+              <%= ticket.quantity %>
+            </div>
+            <div class="small-3 columns">
+              <%= ticket.price %>
+            </div>
+            <div class="small-3 columns">
+              <%= link_to "Tickets", root_url, class: 'button success tiny' %>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
+
+      <% else %>
+        <div class="row">
+          <div class="small-12 columns">
+            There are no tickets for this event
+          </div>
+        </div>
+      <% end %>
 </section>
 
 <div class="map-container">
