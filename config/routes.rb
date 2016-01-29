@@ -8,12 +8,6 @@ Rails.application.routes.draw do
   resources :events, only: [:show, :index]
   resources :players, only: [:show]
 
-  # get 'venues/index'
-  # get 'tickets/index'
-  # get 'players/index'
-  # get 'events/index'
-  # get 'welcome/index'
-
   root 'home#index'
 
   namespace :admin do
