@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
     if @message.save
       MessageMailer.send_email(@message).deliver
-      flash[:notice] = "Message sent!"
+      flash.now[:notice] = "Message sent!"
       render 'new'
     else
       render 'new'
