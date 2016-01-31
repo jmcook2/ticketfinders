@@ -13,39 +13,55 @@
 </div>
 
 <div class="row">
+<div class="small-12 medium-6 columns">
+
+<div class="row">
   <%= form_for :message, url: messages_path do |f| %>
 
     <% if @message.errors.any? %>
       <div id="error_explanation">
-        <h2>
+        <h5 class="gotham-regular" style="color: #FF0000;">
           <%= pluralize(@message.errors.count, "error") %> prohibited
           this message from being sent:
-        </h2>
-        <ul>
+        </h5>
+        <ul style="list-style-type: none;">
           <% @message.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <li class="gotham-regular" style="color: #FF0000;"><%= msg %></li>
           <% end %>
         </ul>
       </div>
     <% end %>
-
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </p>
-
-    <p>
-      <%= f.label :email %><br>
-      <%= f.text_area :email %>
-    </p>
-
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
-  <% end %>
 </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <p>
+        <%= f.text_field :name, :placeholder => "Name", :class => "contact-input" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <p>
+        <%= f.text_field :email, :placeholder => "Email", :class => "contact-input" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <p>
+        <%= f.text_area :body, :placeholder => "Message", :class => "contact-input", :style => "height: 200px;" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <p>
+        <%= f.submit "Send", :class => "button success expand small contact-button gotham-regular" %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+
+  </div>
+  </div>
+

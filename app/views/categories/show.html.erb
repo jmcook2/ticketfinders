@@ -20,7 +20,7 @@
     <% end %>
   </section>
 
-<% else %>
+<% elsif @players.count > 0 %>
 
   <section class="grey-bg">
     <% @players.each do |player| %>
@@ -29,5 +29,11 @@
       </div>
     <% end %>
   </section>
+
+<% else %>
+
+  <div class="row">
+    There are no events in this category.
+  </div>
 
 <% end %>
