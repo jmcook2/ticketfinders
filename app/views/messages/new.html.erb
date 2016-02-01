@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-<div class="small-12 medium-6 columns">
+<div class="small-12 columns">
 
 <div class="row">
   <%= form_for :message, url: messages_path do |f| %>
@@ -33,28 +33,28 @@
     <% end %>
 </div>
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 medium-6 columns">
       <p>
         <%= f.text_field :name, :placeholder => "Name", :class => "contact-input" %>
       </p>
     </div>
   </div>
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 medium-6 columns">
       <p>
         <%= f.text_field :email, :placeholder => "Email", :class => "contact-input" %>
       </p>
     </div>
   </div>
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 medium-6 columns">
       <p>
-        <%= f.text_area :body, :placeholder => "Message", :class => "contact-input", :style => "height: 200px;" %>
+        <%= f.text_area :body, :placeholder => "Message", :class => "contact-input", :style => "height: 250px;" %>
       </p>
     </div>
   </div>
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 medium-6 columns">
       <p>
         <%= f.submit "Send", :class => "button success expand small contact-button gotham-regular" %>
       </p>

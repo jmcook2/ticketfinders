@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @players = Player.where(category_id: @category.id)
-    @competitions = Competition.where(category_id: @category.id)
+    @competitions = Competition.where(category_id: @category.id).order('name ASC')
   end
 
 end
