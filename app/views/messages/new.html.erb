@@ -13,55 +13,59 @@
 </div>
 
 <div class="row">
-<div class="small-12 columns">
-
-<div class="row">
-  <%= form_for :message, url: messages_path do |f| %>
-
-    <% if @message.errors.any? %>
-      <div id="error_explanation">
-        <h5 class="gotham-regular" style="color: #FF0000;">
-          <%= pluralize(@message.errors.count, "error") %> prohibited
-          this message from being sent:
-        </h5>
-        <ul style="list-style-type: none;">
-          <% @message.errors.full_messages.each do |msg| %>
-            <li class="gotham-regular" style="color: #FF0000;"><%= msg %></li>
-          <% end %>
-        </ul>
+  <div class="small-12 medium-6 columns">
+    <div class="row">
+      <%= form_for :message, url: messages_path do |f| %>
+        <% if @message.errors.any? %>
+          <div id="error_explanation">
+            <h5 class="gotham-regular" style="color: #FF0000;">
+              <%= pluralize(@message.errors.count, "error") %> prohibited
+              this message from being sent:
+            </h5>
+            <ul style="list-style-type: none;">
+              <% @message.errors.full_messages.each do |msg| %>
+                <li class="gotham-regular" style="color: #FF0000;"><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <p>
+          <%= f.text_field :name, :placeholder => "Name", :class => "contact-input" %>
+        </p>
       </div>
-    <% end %>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <p>
+          <%= f.text_field :email, :placeholder => "Email", :class => "contact-input" %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <p>
+          <%= f.text_area :body, :placeholder => "Message", :class => "contact-input", :style => "height: 250px;" %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <p>
+          <%= f.submit "Send", :class => "button success expand small contact-button gotham-regular" %>
+        </p>
+      </div>
+    </div>
+      <% end %>
+  </div>
+  <div class="small-12 medium-6 columns">
+    <p class="gotham-regular" style="color: #696969;">
+      Post-ironic pabst tattooed before they sold out, photo booth vinyl chicharrones YOLO kogi hella. Quinoa flannel master cleanse cronut truffaut. Actually chicharrones photo booth blue bottle, butcher sustainable salvia readymade gentrify vice kale chips everyday carry pop-up. Skateboard fingerstache literally normcore marfa, migas meggings readymade hella. Shabby chic street art gastropub selfies drinking vinegar actually. Beard stumptown poutine, fanny pack distillery artisan tattooed chambray kogi chicharrones jean shorts 8-bit. Farm-to-table flexitarian blog, pug four loko wayfarers selfies bicycle rights man bun truffaut ethical vice plaid trust fund.
+    </p>
+    <p class="gotham-regular" style="color: #696969;">
+      Celiac knausgaard leggings flannel, synth master cleanse tilde normcore XOXO 3 wolf moon migas ugh. Chambray PBR&B tumblr taxidermy vice selvage. Fixie etsy four dollar toast, post-ironic +1 venmo kogi forage mixtape craft beer selfies ethical lomo. +1 trust fund lomo skateboard.
+    </p>
+  </div>
 </div>
-  <div class="row">
-    <div class="small-12 medium-6 columns">
-      <p>
-        <%= f.text_field :name, :placeholder => "Name", :class => "contact-input" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 medium-6 columns">
-      <p>
-        <%= f.text_field :email, :placeholder => "Email", :class => "contact-input" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 medium-6 columns">
-      <p>
-        <%= f.text_area :body, :placeholder => "Message", :class => "contact-input", :style => "height: 250px;" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 medium-6 columns">
-      <p>
-        <%= f.submit "Send", :class => "button success expand small contact-button gotham-regular" %>
-      </p>
-    </div>
-  </div>
-  <% end %>
-
-  </div>
-  </div>
-
