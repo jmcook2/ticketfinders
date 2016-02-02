@@ -32,4 +32,22 @@ module ApplicationHelper
     content_for :gon, text
   end
 
+  def recommended(event)
+    city = event.venue.city
+    target_events = []
+    target_venues = []
+    all_venues = Venue.all
+    all_venues.each do |venue|
+      if venue.city == city
+        target_venues << venue
+      end
+    end
+    target_venues.each do |venue|
+      venue.events.each do |event|
+        target_events << event
+      end
+    end
+    target_events
+  end
+
 end
