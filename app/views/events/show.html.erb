@@ -78,7 +78,7 @@
             <tr>
               <td scope="row"><%= ticket.category %></td>
               <td scope="row">&pound;<%= ticket.price.round %></td>
-              <td scope="row"><%= link_to 'Tickets', root_url, class: 'button success tiny' %></td>
+              <td scope="row"><%= link_to 'Tickets', ticket_path(ticket), class: 'button success tiny' %></td>
             </tr>
           <% end %>
         </table>

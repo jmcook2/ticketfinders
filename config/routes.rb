@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :competitions, only: [:show, :index]
   resources :events, only: [:show, :index]
   resources :players, only: [:show]
+  resources :tickets, only: [:show]
 
   root 'home#index'
 

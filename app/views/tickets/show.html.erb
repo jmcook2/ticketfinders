@@ -1,0 +1,26 @@
+<section class="grey-bg">
+  <div class="row">
+    <div class="small-10 small-centered columns">
+      <div class="row">
+        <div class="progress">
+          <span class="meter" style="width:50%"></span>
+        </div>
+      </div>
+      <div class="row">
+        <p class="fineprint">Note: While on this page these tickets will be held for you, once you navigate away we will release your tickets for others to buy.</p>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <%= image_tag @event.avatar.tiny.url %>
+        </div>
+        <div class="small-9 text-left columns" style="padding-left: 0;">
+          <ul class="social-list-container">
+            <li class="social-list-icon"><%= @event.name %></li>
+            <li class="social-list-icon"><%= @event.venue.name %></li>
+            <li class="social-list-icon"><%= nice_time(@event.start_time) %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
