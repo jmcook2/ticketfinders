@@ -21,7 +21,7 @@
           <%= image_tag(event.avatar.tiny.url) %>
         </div>
         <div class="small-6 medium-10 columns text-left">
-          <%= link_to event.name, event_path(event, :comp => @competition, :player => @player), data: { no_turbolink: true } %><br />
+          <%= link_to event.name, event_path(event, :comp => @competition, :player => @player), data: { no_turbolink: true }, class: "event-link" %><br />
           <%= nice_time(event.start_time) %><br />
           <%= event.venue.name %>
         </div>
@@ -51,7 +51,7 @@
           <%= image_tag(event.avatar.tiny.url) %>
         </div>
         <div class="small-12 medium-4 columns text-left">
-          <%= link_to event.name, event_path(event), data: { no_turbolink: true } %><br />
+          <%= link_to event.name, event_path(event), data: { no_turbolink: true }, class: "event-link" %><br />
           <%= nice_time(event.start_time) %><br />
           <%= event.venue.name %>
         </div>

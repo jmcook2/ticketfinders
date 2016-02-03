@@ -45,19 +45,20 @@
       <%= image_tag @event.avatar.url %>
     </div>
     <div class="small-6 medium-7 columns">
-      <h4 style="color: #2D669A;"><%= @event.name %></h4>
+      <h4 style="color: #2C9DDF;"><%= @event.name %></h4>
       <ul class="event-show-list">
         <li><%= @event.venue.name %></li>
         <li><%= nice_time(@event.start_time) %></li>
-        <br />
-        <li>
+      </ul>
+      <ul class="social-list-container">
+        <li class="social-list-icon">
           <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="ticketfinders">Tweet</a>
           <script>
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
           </script>
         </li>
-        <li>
-          &nbsp;&nbsp;&nbsp;<div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+        <li class="social-list-icon">
+          <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
         </li>
       </ul>
     </div>
@@ -67,11 +68,11 @@
   <% if @event.tickets.sum(:quantity) > 0 %>
 
     <div class="row">
-      <div class="small-12 medium-7 white-bg columns">
+      <div class="small-12 medium-6 white-bg columns">
         <table role="grid">
           <tr>
-            <th width="300" scope="column"><h4 class="gotham-regular" style="color: #2D669A;">Category</h5></th>
-            <th width="300" scope="column"><h4 class="gotham-regular" style="color: #2D669A;">Price</h4></th>
+            <th width="300" scope="column"><h4 class="gotham-regular" style="color: #2C9DDF;">Category</h5></th>
+            <th width="300" scope="column"><h4 class="gotham-regular" style="color: #2C9DDF;">Price</h4></th>
           </tr>
           <% @event.tickets.each do |ticket| %>
             <tr>
@@ -83,9 +84,21 @@
         </table>
       </div>
 
-      <div class="small-12 medium-5 columns recommended">
+      <div class="small-12 medium-5 medium-offset-1 columns recommended">
+        <div class="row text-center recommended-header">
+          <h4 class="gotham-regular" style="color: #2C9DDF;">Recommended</h4>
+        </div>
         <% recommended(@event).each do |event| %>
-          <%= link_to event.name, event_path(event), data: { no_turbolink: true } %>
+          <div class="row">
+            <div class="small-6 columns">
+              <%= image_tag event.avatar.tiny.url %>
+            </div>
+            <div class="small-6 text-left columns">
+              <%= link_to event.name, event_path(event), data: { no_turbolink: true }, class: "event-link" %><br />
+              <%= nice_time(event.start_time) %>
+            </div>
+          </div>
+          <div class="tiny-pad"></div>
         <% end %>
       </div>
 
@@ -94,11 +107,25 @@
   <% else %>
 
     <div class="row">
-      <div class="small-12 medium-8 white-bg columns">
-        <p class="gotham-bold">There are no tickets for this event</p>
+      <div class="small-12 medium-6 white-bg columns text-center">
+        <p class="gotham-regular">There are no tickets for this event</p>
       </div>
-      <div class="small-12 medium-4 columns">
-        Recommended Events
+      <div class="small-12 medium-5 medium-offset-1 columns">
+        <div class="row text-center recommended-header">
+          Recommended
+        </div>
+        <% recommended(@event).each do |event| %>
+          <div class="row">
+            <div class="small-6 columns">
+              <%= image_tag event.avatar.tiny.url %>
+            </div>
+            <div class="small-6 text-left columns">
+              <%= link_to event.name, event_path(event), data: { no_turbolink: true }, class: "event-link" %><br />
+              <%= nice_time(event.start_time) %>
+            </div>
+          </div>
+          <div class="tiny-pad"></div>
+        <% end %>
       </div>
     </div>
 
