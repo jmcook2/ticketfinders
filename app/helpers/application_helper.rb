@@ -32,8 +32,8 @@ module ApplicationHelper
     content_for :gon, text
   end
 
-  def recommended(event)
-    city = event.venue.city
+  def recommended(master)
+    city = master.venue.city
     target_events = []
     target_venues = []
     all_venues = Venue.all
@@ -44,10 +44,18 @@ module ApplicationHelper
     end
     target_venues.each do |venue|
       venue.events.each do |event|
-        target_events << event
+        target_events << event unless event == master
       end
     end
-    target_events
+    if target_events.count > 1
+      if target_events.count > 6
+        return target_events.take(6)
+      end
+      return target_events
+    else
+      random_events = Event.all.sample(6)
+      return random_events
+    end
   end
 
 end
