@@ -3,14 +3,14 @@
     <div class="small-10 small-centered columns">
       <div class="row">
         <div class="progress">
-          <span class="meter" style="width:50%"></span>
+          <span class="meter" style="width:75%"></span>
         </div>
       </div>
       <div class="row">
         <p class="fineprint">Note: While on this page these tickets will be held for you, once you navigate away we will release your tickets for others to buy.</p>
       </div>
       <div class="row">
-        <div class="small-3 columns">
+        <div class="small-3 columns no-pad">
           <%= image_tag @event.avatar.tiny.url %>
         </div>
         <div class="small-9 text-left columns" style="padding-left: 0;">
@@ -18,6 +18,17 @@
             <li class="social-list-icon"><%= @event.name %></li>
             <li class="social-list-icon"><%= @event.venue.name %></li>
             <li class="social-list-icon"><%= nice_time(@event.start_time) %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="small-4 columns white-bg">
+          <ul class="social-list-container" style="text-align: right !important;">
+            <li class="social-list-icon ticket-text"><strong>Category:</strong>&nbsp;<%= @ticket.category %></li>
+            <li class="social-list-icon ticket-text"><strong>Ticket Price:</strong>&nbsp;US $<%= @ticket.price %></li>
+            <li class="social-list-icon ticket-text"><strong>Service Fee:</strong>&nbsp;US $4.00</li>
+            <li class="social-list-icon ticket-text"><strong>Sub Total:</strong>&nbsp;US $<%= @ticket.price + 4 %></li>
           </ul>
         </div>
       </div>
