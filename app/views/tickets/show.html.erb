@@ -23,13 +23,25 @@
       </div>
       <div class="row">&nbsp;</div>
       <div class="row">
-        <div class="small-4 columns white-bg">
-          <ul class="social-list-container" style="text-align: right !important;">
-            <li class="social-list-icon ticket-text"><strong>Category:</strong>&nbsp;<%= @ticket.category %></li>
-            <li class="social-list-icon ticket-text"><strong>Ticket Price:</strong>&nbsp;US $<%= @ticket.price %></li>
-            <li class="social-list-icon ticket-text"><strong>Service Fee:</strong>&nbsp;US $4.00</li>
-            <li class="social-list-icon ticket-text"><strong>Sub Total:</strong>&nbsp;US $<%= @ticket.price + 4 %></li>
-          </ul>
+        <div class="small-12 medium-6 columns white-bg">
+          <div class="row">
+            <div class="small-6 columns">
+              <ul class="social-list-container">
+                <li class="social-list-icon ticket-text"><strong>Category:</strong></li>
+                <li class="social-list-icon ticket-text"><strong>Ticket Price:</strong></li>
+                <li class="social-list-icon ticket-text"><strong>Service Fee:</strong></li>
+                <li class="social-list-icon ticket-text" style="color: #2C9DDF;"><strong>Sub Total:</strong></li>
+              </ul>
+            </div>
+            <div class="small-6 columns">
+              <ul class="social-list-container">
+                <li class="social-list-icon ticket-text"><%= @ticket.category %></li>
+                <li class="social-list-icon ticket-text"><%= number_to_currency(@ticket.price) %></li>
+                <li class="social-list-icon ticket-text"><%= number_to_currency(4) %></li>
+                <li class="social-list-icon ticket-text" style="color: #2C9DDF;"><%= number_to_currency(@ticket.price + 4.0) %></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

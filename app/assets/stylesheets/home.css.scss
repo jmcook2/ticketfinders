@@ -1,13 +1,13 @@
  #homepage-hero {
-    background: url("banner.jpg") repeat scroll 0 0 #2D669A;
-    /*background-color: #2D669A;*/
+    /*background: url("banner.jpg") repeat scroll 0 0 #2D669A;*/
+    background-color: #F5F5F5;
     height: 380px;
     padding: 100px 20px 0;
     position: relative;
     text-align: left;
 }
 #homepage-hero h1 {
-    color: #FFFFFF;
+    color: #2D669A;
     font-size: 4em;
     font-weight: 500;
     line-height: 100%;
@@ -49,8 +49,19 @@
 .spacer {
     border-top: 1px solid #2D669A;
 }
-.hero-input { background-color: #FFFFFF !important; border-left: none !important; }
-.custom-prefix { border-right: none !important; }
+.hero-input {
+    background-color: #FFFFFF !important;
+    border-left: none !important;
+    border-right: 1px solid #DCDCDC !important;
+    border-top: 1px solid #DCDCDC !important;
+    border-bottom: 1px solid #DCDCDC !important;
+}
+.custom-prefix {
+    border-right: none !important;
+    border-left: 1px solid #DCDCDC !important;
+    border-top: 1px solid #DCDCDC !important;
+    border-bottom: 1px solid #DCDCDC !important;
+}
 .hero-input::-webkit-input-placeholder { text-align: left; }
 
 /* Fix overlapping borders based on screen size (homepage category grid)*/
