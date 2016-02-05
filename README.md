@@ -1,4 +1,4 @@
-### A few things to change before deploying to remote machine
+### A few things to check before deploying to remote machine
 
 > Copy & Replace **/config/database.yml** with pre-completed file from **/home/rails**
 
