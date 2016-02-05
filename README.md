@@ -24,3 +24,8 @@
 > **Troubleshoot** in root/log/production.log
 
 `tail -f /home/rails/ticketfinders1/log/production.log`
+
+> Further helpful resources
+
+<!-- -->
+>[Ruby on Rails DO Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-use-the-ruby-on-rails-one-click-application-on-digitalocean "Title")
