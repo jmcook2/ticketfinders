@@ -4,6 +4,8 @@
 
 > App uses Ruby2.0.0p643, ensure rvm on server is using the same
 
+`rvm list`
+
 > Ensure root app folder is owned by rails user
 
 `chown -R rails: /home/rails/ticketfinders1/`
