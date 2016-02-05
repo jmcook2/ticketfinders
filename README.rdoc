@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A few things to change before deploying to remote machine
 
-Things you may want to cover:
+* Copy & Replace /config/database.yml with pre-completed file from /home/rails
 
-* Ruby version
+* App uses Ruby2.0.0p643, ensure rvm on server is using the same
 
-* System dependencies
+* Ensure root app folder is owned by rails user
 
-* Configuration
+> chown -R rails: /home/rails/ticketfinders1/
 
-* Database creation
+* Ensure app folder names match /home/rails/ticketfinders1
 
-* Database initialization
+* Give read-write permissions to tmp/cache
 
-* How to run the test suite
+> chmod -R 0777 cache/
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Check for Gemfile discrepancies
