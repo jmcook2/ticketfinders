@@ -8,24 +8,21 @@ end
 categories.each do |category|
   Category.create(description: category, sports: false)
 end
-football = Category.where(description: "Football").ids
-opera = Category.where(description: "Opera").ids
-concerts = Category.where(description: "Concerts").ids
 football_competitions = ['UEFA Cup', 'Premier League', 'FA Cup']
 football_competitions.each do |comp|
-  Competition.create(name: comp, category_id: football)
+  Competition.create(name: comp, category_id: Category.where(description: "Football").ids)
 end
 opera_competitions = ['La Scala', 'Sydney Opera House']
 opera_competitions.each do |opera_comp|
-  Competition.create(name: opera_comp, category_id: opera)
+  Competition.create(name: opera_comp, category_id: Category.where(description: "Opera").ids)
 end
 football_players = ['Arsenal', 'Manchester Utd', 'West Ham', 'Newcastle', 'Everton']
 concerts_players = ['Madonna', 'U2', 'Kings of Leon', 'Enya', 'Kate Bush', 'Adele']
 football_players.each do |player|
-  Player.create(name: player, category_id: football)
+  Player.create(name: player, category_id: Category.where(description: "Football").ids)
 end
 concerts_players.each do |singer|
-  Player.create(name: singer, category_id: concerts)
+  Player.create(name: singer, category_id: Category.where(description: "Concerts").ids)
 end
 venues = ['Hammersmith Apollo', 'Fenway Park', 'TD Garden', 'London Palladium', 'Royal Albert Hall',
           'O2 Arena', 'Old Trafford', 'Emirates', 'Sydney Opera House', 'Paris Opera House']

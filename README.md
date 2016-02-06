@@ -1,6 +1,38 @@
 ### A few things to check before deploying to remote machine
 
+> Move fresh local copy into remote machine **OR** clone from this repo
+
+`scp -r appfolder root@ip.address:/home/rails` OR `git clone <repo>`
+
 > Copy & Replace **/config/database.yml** with pre-completed file from **/home/rails**
+
+<!-- -->
+> Bundle install inside the new folder
+
+`bundle install`
+
+> Bundle update
+
+`bundle update`
+
+> Sometimes it's necessary to drop & reseed the database, here's how to do it
+> Change user to rails (database administrator)
+`su - rails`
+> Check for current users accessing the database
+`SELECT * FROM pg_stat_activity;`
+> Take note of **pid** number from results, then kill as needed
+`pg_terminate_backend(pid_int);`
+> Switch user back into root
+`su - root`
+> Navigate to app folder and drop database
+`RAILS_ENV=production rake db:drop`
+> Then run the following commands (in order) to create, migrate & seed the database
+`RAILS_ENV=production rake db:create`
+`RAILS_ENV=production rake db:migrate`
+`RAILS_ENV=production rake db:seed`
+
+> Precompile assets with this command
+`RAILS_ENV=production rake assets:precompile`
 
 <!-- -->
 > App uses **Ruby2.0.0p643**, ensure rvm on server is using the same
