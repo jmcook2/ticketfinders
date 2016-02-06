@@ -85,3 +85,23 @@
 .footer h5 { margin-top: .5em; }
 .terms-container { background-color: #FFFFFF; padding: 10px; }
 .terms-container * { font-size: .9em; }
+/* added as solution to sticky footer - also seems to have influenced (fixed) horizontal scroll
+   problem on homepage for mobile screens*/
+html, body {
+  height: 100%;
+}
+#wrap {
+  min-height: 100%;
+}
+#main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-bottom: 250px;
+}
+/* finish sticky footer solution */

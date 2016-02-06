@@ -5,12 +5,13 @@ class CompetitionsController < ApplicationController
     @category = Category.find(@competition.category_id)
     @events = Event.where(competition_id: @competition.id)
 
-    @players = []
+    @tmp = []
     @events.each do |event|
       event.players.each do |player|
-        @players << player
+        @tmp << player unless @tmp.include?(player)
       end
     end
+    @players = @tmp.sort { |a,b| a.name <=> b.name }
   end
 
 end

@@ -8,24 +8,26 @@ class PlayersController < ApplicationController
       # Retrieve all events in the given competition
       @all_events = Event.where(competition_id: @competition.id)
       # Return player specific events
-      @events = []
+      @tmp = []
       @all_events.each do |event|
         event.players.each do |player|
           if player == @player
-            @events << event
+            @tmp << event
           end
         end
       end
+      @events = @tmp.sort { |a,b| a.start_time <=> b.start_time }
     else
       @all_events = Event.all
-      @events = []
+      @tmp = []
       @all_events.each do |event|
         event.players.each do |player|
           if @player == player
-            @events << event
+            @tmp << event
           end
         end
       end
+      @events = @tmp.sort { |a,b| a.start_time <=> b.start_time }
     end
   end
 

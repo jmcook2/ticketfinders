@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.text_search(params[:query])
+    @events = Event.text_search(params[:query]).order('start_time ASC')
   end
 
   def show
