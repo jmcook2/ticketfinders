@@ -5,7 +5,7 @@ class Competition < ActiveRecord::Base
   has_many :events, dependent: :destroy
 
   validates :name, presence: true,
-                   length: { maximum: 20 }
+                   length: { maximum: 50 }
 
   validates :category_id, presence: true
 

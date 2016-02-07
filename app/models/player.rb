@@ -5,7 +5,7 @@ class Player < ActiveRecord::Base
   has_one :category
 
   validates :name, presence: true,
-                   length: { maximum: 20 }
+                   length: { maximum: 50 }
   validates :category_id, presence: true
 
 end

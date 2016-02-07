@@ -6,7 +6,7 @@ class Venue < ActiveRecord::Base
   has_many :events, dependent: :destroy
 
   validates :name, presence: true,
-                   length: { maximum: 20 }
+                   length: { maximum: 50 }
 
   validates :capacity, presence: true
   validates :address, presence: true

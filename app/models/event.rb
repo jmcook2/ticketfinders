@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   has_many :tickets, dependent: :destroy
 
   validates :name, presence: true,
-                   length: { maximum: 20 }
+                   length: { maximum: 50 }
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :venue_id, presence: true
