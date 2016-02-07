@@ -21,6 +21,9 @@
 
 `su - rails`
 
+> Start PostgreSQL with `psql`
+
+<!-- -->
 > Check for current users accessing the database
 
 `SELECT * FROM pg_stat_activity;`
