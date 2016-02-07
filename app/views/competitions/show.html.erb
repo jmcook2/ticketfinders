@@ -8,7 +8,9 @@
 </div>
 
 <div class="row">
-  <h3 class="gotham-regular"><%= @competition.name %></h3>
+  <div class="small-12 columns">
+    <h3 class="gotham-regular"><%= @competition.name %></h3>
+  </div>
 </div>
 
 <% if @players.count > 0 %>
@@ -16,7 +18,9 @@
   <section class="grey-bg">
     <% @players.each do |player| %>
       <div class="row">
-        <%= link_to player.name, player_path(player, :comp => @competition) %>
+        <div class="small-12 columns">
+          <%= link_to player.name, player_path(player, :comp => @competition) %>
+        </div>
       </div>
     <% end %>
   </section>
@@ -42,7 +46,9 @@
 
   <section class="grey-bg">
     <div class="row">
-      <h5>We don't currently have any events for this competition</h5>
+      <div class="small-12 columns">
+        <p>We don't currently have any events for this competition</p>
+      </div>
     </div>
   </section>
 
