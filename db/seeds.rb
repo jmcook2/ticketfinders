@@ -43,6 +43,32 @@ end
 #####################################################################
 ##############STAGE4#################################################
 
+matches = ["Arsenal vs Chelsea", "Manchester Utd vs Everton", "Newcastle vs West Ham"]
+counter = 0
 
-# Use to create random datetimes for events
-# rand(6.months).seconds.from_now
+3.times do Event.create(
+{
+  name: matches[counter],
+  start_time: rand(6.months).seconds.from_now,
+  end_time: rand(6.months).seconds.from_now,
+  venue_id: Venue.limit(1).order("RANDOM()").ids.pop,
+  category_id: Category.where(description: "Football").ids.pop,
+  sports: true
+})
+counter += 1
+end
+
+concerts = ["U2 Live", "Kings of Leon", "Enya Live at the O2"]
+inc = 0
+
+3.times do Event.create(
+{
+  name: concerts[inc],
+  start_time: rand(6.months).seconds.from_now,
+  end_time: rand(6.months).seconds.from_now,
+  venue_id: Venue.limit(1).order("RANDOM()").ids.pop,
+  category_id: Category.where(description: "Concerts").ids.pop,
+  sports: true
+})
+inc += 1
+end
