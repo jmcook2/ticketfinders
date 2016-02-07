@@ -51,7 +51,7 @@
         <div class="row">
           <div class="small-12 columns">&nbsp;</div>
         </div>
-        <%= link_to category_path(39) do %>
+        <%= link_to category_path(Category.where(description: "Theater").ids) do %>
           <p class="change-icon hide-for-touch">
             <span><%= embedded_svg("TheaterBlue.svg") %></span>
             <span><%= embedded_svg("TheaterGrey.svg") %></span>
@@ -65,7 +65,7 @@
         <div class="row">
           <div class="small-12 columns">&nbsp;</div>
         </div>
-        <%= link_to category_path(23) do %>
+        <%= link_to category_path(Category.where(description: "Opera").ids) do %>
           <p class="change-icon hide-for-touch">
             <span><%= embedded_svg("OperaBlue.svg") %></span>
             <span><%= embedded_svg("OperaGrey.svg") %></span>
@@ -79,7 +79,7 @@
         <div class="row">
           <div class="small-12 columns">&nbsp;</div>
         </div>
-        <%= link_to category_path(41) do %>
+        <%= link_to category_path(Category.where(description: "Concerts").ids) do %>
           <p class="change-icon hide-for-touch">
             <span><%= embedded_svg("ConcertsBlue.svg") %></span>
             <span><%= embedded_svg("ConcertsGrey.svg") %></span>
