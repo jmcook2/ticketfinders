@@ -1,6 +1,6 @@
 class Ticket < ActiveRecord::Base
 
-  belongs_to :event
+  belongs_to :event, dependent: :destroy
 
   validates :price, presence: true
   validates :category, presence: true

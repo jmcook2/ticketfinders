@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
   belongs_to :venue
-  has_one :category
+  belongs_to :category
   has_one :competition
   has_and_belongs_to_many :players
   has_many :tickets, dependent: :destroy
