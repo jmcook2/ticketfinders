@@ -16,9 +16,14 @@ class Event < ActiveRecord::Base
   validates :sports, inclusion: { in: [true, false] }
   validates :priority, inclusion: { in: [true, false] }
 
+  include PgSearch
+  pg_search_scope :search, :against => :name,
+    using: {tsearch: {dictionary: "english"}},
+    associated_against: {venue: [:name, :city], category: :description}
+
   def self.text_search(query)
     if query.present?
-      where("name ilike :q", q: "%#{query}%")
+      search(query)
     else
       scoped
     end
