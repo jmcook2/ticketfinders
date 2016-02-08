@@ -68,7 +68,7 @@ inc = 0
   end_time: rand(6.months).seconds.from_now,
   venue_id: Venue.limit(1).order("RANDOM()").ids.pop,
   category_id: Category.where(description: "Concerts").ids.pop,
-  sports: true
+  sports: false
 })
 inc += 1
 end

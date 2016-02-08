@@ -30,7 +30,7 @@
 
 > Take note of **pid** number from results, then kill as needed
 
-`pg_terminate_backend(pid_int);`
+`SELECT pg_terminate_backend(pid_int);`
 
 > Switch user back into root
 
