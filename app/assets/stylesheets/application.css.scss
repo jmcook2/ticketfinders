@@ -60,12 +60,7 @@
 }
 .footer .small-icon { font-size: 35px; }
 .footer .small-icon:hover { color: #2C9DDF; }
-.footer p, .footer a {
-  font-weight: 300;
-  font-size: .8em;
-  color: #494949;
-}
-.footer span {
+.footer p, .footer a, .footer span {
   font-weight: 300;
   font-size: .8em;
   color: #494949;
@@ -96,6 +91,6 @@ html, body {
   margin-top: -350px; /* negative value of footer height */
   height: 350px;
   clear:both;
-  padding-bottom: 500px;
+  padding-bottom: 415px;
 }
 /* finish sticky footer solution */
