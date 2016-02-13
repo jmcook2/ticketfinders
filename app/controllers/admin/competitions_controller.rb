@@ -48,7 +48,7 @@ class Admin::CompetitionsController < AdminController
   private
 
   def competition_params
-    params.require(:competition).permit(:name, :category_id)
+    params.require(:competition).permit(:name, :category_id, :text)
   end
 
 end

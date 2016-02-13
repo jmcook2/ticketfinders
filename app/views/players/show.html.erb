@@ -16,6 +16,27 @@
     </div>
   </div>
 
+<% if @player.text %>
+
+  <div class="row gotham-regular text-text">
+    <div class="small-12 columns">
+      <% if @player.text.length > 250 %>
+        <%= truncate(@player.text, length: 250) %>
+        <%= link_to 'Read more', '', class: "read-more-#{@player.id}" %>
+        <script>
+          $('.read-more-<%= @player.id %>').on('click', function(e) {
+            e.preventDefault();
+            $(this).parent().html('<%= escape_javascript @player.text %>');
+          });
+        </script>
+      <% else %>
+        <%= @player.text %>
+      <% end %>
+    </div>
+  </div>
+  <br />
+<% end %>
+
   <section class="grey-bg">
     <% @events.each do |event| %>
       <div class="row event-tile">
@@ -47,6 +68,27 @@
       <h3 class="gotham-regular"><%= @player.name %></h3>
     </div>
   </div>
+
+<% if @player.text %>
+
+  <div class="row gotham-regular text-text">
+    <div class="small-12 columns">
+      <% if @player.text.length > 250 %>
+        <%= truncate(@player.text, length: 250) %>
+        <%= link_to 'Read more', '', class: "read-more-#{@player.id}" %>
+        <script>
+          $('.read-more-<%= @player.id %>').on('click', function(e) {
+            e.preventDefault();
+            $(this).parent().html('<%= escape_javascript @player.text %>');
+          });
+        </script>
+      <% else %>
+        <%= @player.text %>
+      <% end %>
+    </div>
+  </div>
+  <br />
+<% end %>
 
   <section class="grey-bg">
     <% @events.each do |event| %>

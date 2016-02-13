@@ -13,6 +13,27 @@
   </div>
 </div>
 
+<% if @competition.text %>
+
+  <div class="row gotham-regular text-text">
+    <div class="small-12 columns">
+      <% if @competition.text.length > 250 %>
+        <%= truncate(@competition.text, length: 250) %>
+        <%= link_to 'Read more', '', class: "read-more-#{@competition.id}" %>
+        <script>
+          $('.read-more-<%= @competition.id %>').on('click', function(e) {
+            e.preventDefault();
+            $(this).parent().html('<%= escape_javascript @competition.text %>');
+          });
+        </script>
+      <% else %>
+        <%= @competition.text %>
+      <% end %>
+    </div>
+  </div>
+  <br />
+<% end %>
+
 <% if @players.count > 0 %>
 
   <section class="grey-bg">
