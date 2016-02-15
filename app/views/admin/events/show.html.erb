@@ -9,11 +9,6 @@
 </p>
 
 <p>
-  <strong>End time:</strong>
-  <%= @event.end_time.strftime("%a, %d-%b-%Y at %I:%M%p") %>
-</p>
-
-<p>
   <strong>Venue:</strong>
   <%= Venue.find(@event.venue_id).name %>
 </p>

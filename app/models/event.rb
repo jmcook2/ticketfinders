@@ -10,7 +10,6 @@ class Event < ActiveRecord::Base
   validates :name, presence: true,
                    length: { maximum: 50 }
   validates :start_time, presence: true
-  validates :end_time, presence: true
   validates :venue_id, presence: true
   validates :category_id, presence: true
   validates :sports, inclusion: { in: [true, false] }

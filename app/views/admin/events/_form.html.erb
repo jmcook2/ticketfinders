@@ -25,11 +25,6 @@
   </p>
 
   <p>
-    <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time %>
-  </p>
-
-  <p>
     <%= f.label :venue_id %><br>
     <%= f.collection_select(:venue_id, Venue.order('name ASC'), :id, :name, prompt: true) %>
   </p>

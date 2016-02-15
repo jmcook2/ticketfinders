@@ -50,7 +50,6 @@ counter = 0
 {
   name: matches[counter],
   start_time: rand(6.months).seconds.from_now,
-  end_time: rand(6.months).seconds.from_now,
   venue_id: Venue.limit(1).order("RANDOM()").ids.pop,
   category_id: Category.where(description: "Football").ids.pop,
   sports: true
@@ -65,7 +64,6 @@ inc = 0
 {
   name: concerts[inc],
   start_time: rand(6.months).seconds.from_now,
-  end_time: rand(6.months).seconds.from_now,
   venue_id: Venue.limit(1).order("RANDOM()").ids.pop,
   category_id: Category.where(description: "Concerts").ids.pop,
   sports: false
