@@ -109,36 +109,30 @@
 </div>
 
 <div class="row">
-  <ul class="small-block-grid-1 medium-block-grid-3 text-center">
-    <li>
-      <%= image_tag(@sports[0].avatar.url) %>
-      <span class="medium-text-left">
-        <p class="gotham-regular blue">
-          <%= link_to "#{@sports[0].name}", event_path(@sports[0]), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= @sports[0].venue.name %>
-        </p>
-      </span>
-    </li>
-    <li>
-      <%= image_tag(@sports[1].avatar.url) %>
-      <span class="medium-text-left">
-        <p class="gotham-regular blue">
-          <%= link_to "#{@sports[1].name}", event_path(@sports[1]), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= @sports[1].venue.name %>
-        </p>
-      </span>
-    </li>
-    <li>
-      <%= image_tag(@sports[2].avatar.url) %>
-      <span class="medium-text-left">
-        <p class="gotham-regular blue">
-          <%= link_to "#{@sports[2].name}", event_path(@sports[2]), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= @sports[2].venue.name %>
-        </p>
-      </span>
-    </li>
-  </ul>
+  <div class="small-12 columns text-center">
+    <div class="grid">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
+      <div class="grid-item">
+        <img src="http://placehold.it/400x405" />
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="row">&nbsp;</div>
 
 <div class="row">
   <div class="small-12 columns spacer">&nbsp;</div>
@@ -149,33 +143,41 @@
 </div>
 
 <div class="row">
-  <ul class="small-block-grid-1 medium-block-grid-3 text-center">
-    <li>
-      <%= image_tag(@music[0].avatar.url) %>
-      <span class="medium-text-left">
-        <p class="gotham-regular blue">
-          <%= link_to "#{@music[0].name}", event_path(@music[0]), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= @music[0].venue.name %>
-        </p>
-      </span>
-    </li>
-    <li>
-      <%= image_tag(@music[1].avatar.url) %>
-      <span class="medium-text-left">
-        <p class="gotham-regular blue">
-          <%= link_to "#{@music[1].name}", event_path(@music[1]), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= @music[1].venue.name %>
-        </p>
-      </span>
-    </li>
-    <li>
-      <%= image_tag(@music[2].avatar.url) %>
-      <span class="medium-text-left">
-        <p class="gotham-regular blue">
-          <%= link_to "#{@music[2].name}", event_path(@music[2]), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= @music[2].venue.name %>
-        </p>
-      </span>
-    </li>
-  </ul>
+  <div class="small-12 columns text-center">
+    <div class="grid">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
+      <div class="grid-item">
+        <img src="http://placehold.it/400x405" />
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+      <div class="grid-item">
+        <%= image_tag(Event.first.avatar.url) %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    columnWidth: '.grid-sizer',
+    gutter: '.gutter-sizer'
+  });
+  // layout Isotope after each image loads
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry();
+  });
+</script>
+
+<script src='/assets/masonry.min.js'></script>
+<script src='/assets/imagesLoaded.min.js'></script>
