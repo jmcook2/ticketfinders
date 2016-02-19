@@ -8,6 +8,10 @@
   <%= Category.find(@player.category_id).description %>
 </p>
 
+<p>
+  <%= image_tag(@player.avatar.url) %>
+</p>
+
 <p style="word-wrap: break-word;">
   <strong>Text:</strong>
   <%= @player.text %>

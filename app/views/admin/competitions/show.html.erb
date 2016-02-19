@@ -8,6 +8,10 @@
   <%= Category.find(@competition.category_id).description %>
 </p>
 
+<p>
+  <%= image_tag(@competition.avatar.url) %>
+</p>
+
 <p style="word-wrap: break-word;">
   <strong>Text:</strong>
   <%= @competition.text %>

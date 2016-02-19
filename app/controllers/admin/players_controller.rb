@@ -48,7 +48,7 @@ class Admin::PlayersController < AdminController
   private
 
   def player_params
-    params.require(:player).permit(:name, :category_id, :text)
+    params.require(:player).permit(:name, :category_id, :text, :avatar)
   end
 
 end

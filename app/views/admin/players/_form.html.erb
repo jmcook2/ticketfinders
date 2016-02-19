@@ -29,6 +29,14 @@
     <%= f.collection_select(:category_id, Category.order('description ASC'), :id, :description, prompt: true) %>
   </p>
 
+  <!-- if image already exists for this player, show image -->
+  <%= image_tag(@player.avatar.url) if @player.avatar? %>
+
+  <p>
+    <%= f.label :avatar, "Image" %>
+    <%= f.file_field :avatar %>
+  </p>
+
   <p>
     <%= f.submit %>
   </p>

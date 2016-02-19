@@ -1,5 +1,6 @@
 class Competition < ActiveRecord::Base
 
+  mount_uploader :avatar, AvatarUploader
   has_many :players
   has_one :category
   has_many :events, dependent: :destroy

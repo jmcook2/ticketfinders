@@ -9,11 +9,38 @@
 
 <div class="row">
   <div class="small-12 columns">
-    <h3 class="gotham-regular"><%= @competition.name %></h3>
+    <h4 class="gotham-regular"><%= @competition.name %></h4>
   </div>
 </div>
 
-<% if @competition.text %>
+<% if @competition.text && @competition.avatar? %>
+
+  <div class="row">
+    <div class="small-12 medium-2 columns">
+      <%= image_tag((@competition.avatar.tiny.url)) %>
+    </div>
+  <br />
+
+  <div class="gotham-regular text-text">
+    <div class="small-12 medium-10 columns">
+      <% if @competition.text.length > 250 %>
+        <%= truncate(@competition.text, length: 250) %>
+        <%= link_to 'Read more', '', class: "read-more-#{@competition.id}" %>
+        <script>
+          $('.read-more-<%= @competition.id %>').on('click', function(e) {
+            e.preventDefault();
+            $(this).parent().html('<%= escape_javascript @competition.text %>');
+          });
+        </script>
+      <% else %>
+        <%= @competition.text %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <br />
+
+<% elsif @competition.text %>
 
   <div class="row gotham-regular text-text">
     <div class="small-12 columns">
@@ -32,6 +59,15 @@
     </div>
   </div>
   <br />
+
+<% elsif @competition.avatar? %>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <%= image_tag((@competition.avatar.tiny.url)) %>
+      </div>
+    </div>
+
 <% end %>
 
 <% if @players.count > 0 %>
