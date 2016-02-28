@@ -76,4 +76,7 @@
 > Further helpful resources
 
 <!-- -->
+> Restart Unicorn & Reload NGINX
+
+<!-- -->
 >[Ruby on Rails Digital Ocean deployment](https://www.digitalocean.com/community/tutorials/how-to-use-the-ruby-on-rails-one-click-application-on-digitalocean "Title")

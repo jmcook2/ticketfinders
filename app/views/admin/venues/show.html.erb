@@ -23,5 +23,9 @@
   <%= @venue.address %>
 </p>
 
+<p>
+  <%= image_tag(@venue.avatar.url) %>
+</p>
+
 <%= link_to 'Edit', edit_admin_venue_path(@venue) %> |
 <%= link_to 'Back', admin_venues_path %>

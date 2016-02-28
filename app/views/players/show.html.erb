@@ -16,7 +16,34 @@
     </div>
   </div>
 
-<% if @player.text %>
+<% if @player.text && @player.avatar? %>
+
+  <div class="row">
+    <div class="small-12 medium-2 columns">
+      <%= image_tag((@player.avatar.tiny.url)) %>
+    </div>
+  <br />
+
+  <div class="gotham-regular text-text">
+    <div class="small-12 medium-10 columns">
+      <% if @player.text.length > 250 %>
+        <%= truncate(@player.text, length: 250) %>
+        <%= link_to 'Read more', '', class: "read-more-#{@player.id}" %>
+        <script>
+          $('.read-more-<%= @player.id %>').on('click', function(e) {
+            e.preventDefault();
+            $(this).parent().html('<%= escape_javascript @player.text %>');
+          });
+        </script>
+      <% else %>
+        <%= @player.text %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+  <br />
+
+<% elsif @player.text %>
 
   <div class="row gotham-regular text-text">
     <div class="small-12 columns">
@@ -35,6 +62,15 @@
     </div>
   </div>
   <br />
+
+<% elsif @player.avatar? %>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <%= image_tag((@player.avatar.tiny.url)) %>
+      </div>
+    </div>
+
 <% end %>
 
   <section class="grey-bg">
