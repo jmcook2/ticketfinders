@@ -91,7 +91,7 @@
         <% recommended(@event).each do |event| %>
           <div class="row">
             <div class="small-6 columns">
-              <%= image_tag event.avatar.tiny.url %>
+              <%= event.name %>
             </div>
             <div class="small-6 text-left columns">
               <%= link_to event.name, event_path(event), data: { no_turbolink: true }, class: "event-link" %><br />
@@ -117,7 +117,7 @@
         <% recommended(@event).each do |event| %>
           <div class="row">
             <div class="small-6 columns">
-              <%= image_tag event.avatar.tiny.url %>
+              <%= event.name %>
             </div>
             <div class="small-6 text-left columns">
               <%= link_to event.name, event_path(event), data: { no_turbolink: true }, class: "event-link" %><br />
