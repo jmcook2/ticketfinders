@@ -1,6 +1,5 @@
 class Event < ActiveRecord::Base
 
-  mount_uploader :avatar, AvatarUploader
   belongs_to :venue
   belongs_to :category
   has_one :competition

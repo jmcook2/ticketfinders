@@ -54,7 +54,7 @@ class Admin::EventsController < AdminController
 
   def event_params
     params.require(:event).permit(:name, :start_time, :venue_id,
-                                  :category_id, :avatar, :competition_id,
+                                  :category_id, :competition_id,
                                   :sports, :priority)
   end
 

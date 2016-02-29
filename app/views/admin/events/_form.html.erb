@@ -56,14 +56,6 @@
     <%= select_tag "event_players", options_from_collection_for_select(Player.all, 'id', 'name',@event.players.map{ |player| player.id }), :multiple => true %>
   </p>
 
-  <!-- if image already exists for this event, show image -->
-  <%= image_tag(@event.avatar.url) if @event.avatar? %>
-
-  <p>
-    <%= f.label :avatar, "Image" %>
-    <%= f.file_field :avatar %>
-  </p>
-
   <p>
     <%= f.submit %>
   </p>
