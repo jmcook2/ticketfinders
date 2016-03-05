@@ -30,7 +30,7 @@
   </p>
 
   <!-- if image already exists for this competition, show image -->
-  <%= image_tag(@competition.avatar.url) if @competition.avatar? %>
+  <%= image_tag(@competition.avatar.tiny.url) if @competition.avatar? %>
 
   <p>
     <%= f.label :avatar, "Image" %>

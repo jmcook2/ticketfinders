@@ -30,7 +30,7 @@
   </p>
 
   <!-- if image already exists for this player, show image -->
-  <%= image_tag(@player.avatar.url) if @player.avatar? %>
+  <%= image_tag(@player.avatar.tiny.url) if @player.avatar? %>
 
   <p>
     <%= f.label :avatar, "Image" %>

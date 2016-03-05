@@ -40,7 +40,7 @@
   </p>
 
   <!-- if image already exists for this venue, show image -->
-  <%= image_tag(@venue.avatar.url) if @venue.avatar? %>
+  <%= image_tag(@venue.avatar.tiny.url) if @venue.avatar? %>
 
   <p>
     <%= f.label :avatar, "Image" %>

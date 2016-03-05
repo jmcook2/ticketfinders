@@ -12,6 +12,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th>ID</th>
   </tr>
 
   <% @competitions.each do |competition| %>
@@ -23,6 +24,7 @@
       <td><%= link_to 'Destroy', admin_competition_path(competition),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <td><%= competition.id %></td>
     </tr>
   <% end %>
 </table>
