@@ -84,20 +84,31 @@
 
 <% elsif @events.count > 0 %>
 
-  <section class="grey-bg">
+<div class="row">&nbsp;</div>
+
+<div class="row table">
+  <div class="small-12 columns">
     <% @events.each do |event| %>
-      <div class="row event-tile">
-        <div class="small-12 medium-2 columns">
-          <%= event.name %>
+      <div class="row table-row">
+        <div class="small-3 columns table-one">
+          <h5 class="gotham-regular" style="font-size: 1rem;"><%= event.start_time.strftime("%a") %></h5>
+          <h5 class="gotham-light"><%= event.start_time.strftime("%d %b %Y") %></h5>
+          <h5 class="gotham-light" style="color: #A8A8A8;"><%= event.start_time.strftime("%H:%M") %></h5>
         </div>
-        <div class="small-12 medium-10 columns text-left">
-          <%= link_to event.name, event_path(event), data: { no_turbolink: true }, class: "event-link" %><br />
-          <%= nice_time(event.start_time) %><br />
-          <%= event.venue.name %>
+        <div class="small-7 columns table-two">
+          <h5 class="gotham-regular" style="font-size: 1rem; color: #2D669A"><%= event.name %></h5>
+          <h5 class="gotham-light"><%= event.venue.name %></h5>
+          <h5 class="gotham-light" style="color: #A8A8A8;"><i class="fi-marker"></i><%= " #{event.venue.city}, #{event.venue.country}" %></h5>
+        </div>
+        <div class="small-2 columns table-three">
+          <%= link_to 'Tickets', '#', class: 'button tiny radius' %>
         </div>
       </div>
     <% end %>
-  </section>
+  </div>
+</div>
+
+<div class="row">&nbsp;</div>
 
 <% else %>
 
