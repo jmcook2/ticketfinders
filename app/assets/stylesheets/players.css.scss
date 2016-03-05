@@ -1,0 +1,28 @@
+.table-one {
+  background-color: #F5F5F5;
+  border-right: 1px solid #E6E6E6;
+}
+
+.table-row {
+  height: 80px;
+}
+
+.table {
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+}
+
+.table-one, .table-two, .table-three {
+  height: 100%;
+  border-bottom: 1px solid #E6E6E6;
+  padding-top: 10px;
+}
+
+.table-three {
+  padding-top: 23px;
+}
+
+.table h5 {
+  font-size: 0.9rem;
+  line-height: 13px;
+}
