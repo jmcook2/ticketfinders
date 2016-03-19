@@ -31,7 +31,7 @@
 
   <p>
     <%= f.label :event_id %><br>
-    <%= f.collection_select(:event_id, Event.order('name ASC'), :id, :name, prompt: true) %>
+    <%= f.collection_select(:event_id, Event.order('id ASC'), :id, :id, prompt: true) %>
   </p>
 
   <p>
