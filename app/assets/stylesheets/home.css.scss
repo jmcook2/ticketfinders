@@ -1,8 +1,8 @@
 #homepage-hero {
-    /*background: url("unnamed.jpg") repeat scroll 0 0 #2D669A;*/
-    background-color: #2D669A;
-    height: 380px;
-    padding: 100px 20px 0;
+    background: url("stadlo.jpg") repeat scroll 0 0 #2D669A;
+    /*background-color: #2D669A;*/
+    height: 520px;
+    padding: 180px 20px 0;
     position: relative;
     text-align: left;
 }
@@ -58,7 +58,10 @@
     border-top: 1px solid #DCDCDC !important;
     border-bottom: 1px solid #DCDCDC !important;
 }
-.hero-input::-webkit-input-placeholder { text-align: left; }
+.hero-input::-webkit-input-placeholder {
+    text-align: left;
+    font-family: "gotham";
+}
 
 /* Fix overlapping borders based on screen size (homepage category grid)*/
 /* EXTREMELY HACKY, FIND PERMANENT SOLUTION */
