@@ -42,3 +42,40 @@ html { overflow-y: scroll; }
   .grid-item { width: 49.5%; }
   .gutter-sizer { width: 1%; }
 }
+
+.grid-item {
+  position:relative;
+  clear:none;
+  overflow:hidden;
+}
+
+.grid-item img {
+  position:relative;
+  z-index:1;
+}
+
+.grid-item img:hover {
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image-overlay {
+  background-color: #FFFFFF;
+  opacity: 0.75;
+  display:block;
+  position:absolute;
+  width:100%;
+  bottom: 0;
+  left:0;
+  z-index:2;
+  text-align:left;
+  color: #000000;
+  font-size: 1.2em;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+/* tablets */
+@media screen and (min-width: 736px) and (max-width: 1024px) {
+  .image-overlay { text-align: left; }
+}
