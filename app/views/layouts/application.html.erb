@@ -2,9 +2,14 @@
 <html>
   <head>
     <title>
-      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
-      TicketFinders | Tickets for Concerts, Sports, Opera, Theater, West End shows, Family events, Hospitality
+      <%= if content_for?(:title) then yield(:title) + ' Tickets - ' end %>
+      TicketFinders | Tickets for Concerts, Sports, Opera, Theater, Family events
     </title>
+    <% if content_for?(:description) %>
+      <meta name='description' content="Buy <%= yield :description %> tickets from the official Ticket-Finders.com site.">
+    <% else %>
+      <meta name='description' content="Buy tickets to concerts, sports, arts, theater and hard to find sold out events worldwide.">
+    <% end %>
     <%= if content_for?(:gon) then yield(:gon) end %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>

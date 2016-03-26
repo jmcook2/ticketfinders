@@ -32,6 +32,10 @@ module ApplicationHelper
     content_for :gon, text
   end
 
+  def description(text)
+    content_for :description, text
+  end
+
   def recommended(master)
     city = master.venue.city
     target_events = []
