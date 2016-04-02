@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.text_search(params[:query])
+    @sorted = @events.sort { |a,b| a.start_time <=> b.start_time }
   end
 
   def show

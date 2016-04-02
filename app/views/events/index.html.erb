@@ -17,7 +17,7 @@
 
   <div class="row table">
     <div class="small-12 columns">
-      <% @events.each do |event| %>
+      <% @sorted.each do |event| %>
         <div class="row table-row">
           <div class="small-3 columns table-one">
             <h5 class="gotham-regular" style="font-size: 1rem;"><%= event.start_time.strftime("%a") %></h5>

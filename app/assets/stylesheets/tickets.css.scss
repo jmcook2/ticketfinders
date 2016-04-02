@@ -12,3 +12,16 @@
   font-size: 0.9em;
   color: #545454;
 }
+
+.event-name {
+  padding: 10px;
+  background-color: #2C9DDF;
+  color: #FFFFFF;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  .event-name {
+    font-size: 0.2em;
+  }
+}

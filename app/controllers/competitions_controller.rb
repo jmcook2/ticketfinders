@@ -4,6 +4,7 @@ class CompetitionsController < ApplicationController
     @competition = Competition.find(params[:id])
     @category = Category.find(@competition.category_id)
     @events = Event.where(competition_id: @competition.id)
+    @sorted = @events.sort { |a,b| a.start_time <=> b.start_time }
 
     @tmp = []
     @events.each do |event|

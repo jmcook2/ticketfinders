@@ -10,15 +10,23 @@
         <p class="fineprint">Note: While on this page these tickets will be held for you, once you navigate away we will release your tickets for others to buy.</p>
       </div>
       <div class="row">
-        <div class="small-3 columns no-pad">
-          <%= @event.name %>
+        <div class="small-4 columns no-pad">
+          <span class="event-name gotham-bold"><%= @event.name %></span>
         </div>
-        <div class="small-9 text-left columns" style="padding-left: 0;">
+        <div class="small-8 text-left columns" style="padding-left: 0;">
           <ul class="social-list-container">
-            <li class="social-list-icon"><%= @event.name %></li>
             <li class="social-list-icon"><%= @event.venue.name %></li>
             <li class="social-list-icon"><%= nice_time(@event.start_time) %></li>
-            <li class="social-list-icon"><%= @ticket.text %></li>
+            <li class="social-list-icon">
+              <span style="color: #2C9DDF; font-size: 0.8em;">
+                <a href="#" data-reveal-id="myModal" >Ticket Info</a>
+                <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                <h2 id="modalTitle">Ticket Info</h2>
+                <p><%= simple_format(@ticket.text) %></p>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                </div>
+              </span>
+            </li>
           </ul>
         </div>
       </div>
@@ -30,7 +38,7 @@
               <ul class="social-list-container">
                 <li class="social-list-icon ticket-text"><strong>Category:</strong></li>
                 <li class="social-list-icon ticket-text"><strong>Ticket Price:</strong></li>
-                <li class="social-list-icon ticket-text"><strong>Service Fee:</strong></li>
+                <li class="social-list-icon ticket-text"><strong>Local Delivery:</strong></li>
                 <li class="social-list-icon ticket-text" style="color: #2C9DDF;"><strong>Sub Total:</strong></li>
               </ul>
             </div>
