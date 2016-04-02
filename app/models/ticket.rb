@@ -6,5 +6,6 @@ class Ticket < ActiveRecord::Base
   validates :category, presence: true
   validates :quantity, presence: true
   validates :event_id, presence: true
+  validates :currency, presence: true
 
 end

@@ -35,6 +35,11 @@
   </p>
 
   <p>
+    <%= f.label :currency %><br>
+    <%= f.select :currency, ["Dollars", "Euros", "Pounds"], :prompt => "Choose Currency" %>
+  </p>
+
+  <p>
     <%= f.label :event_id %><br>
     <%= f.collection_select(:event_id, Event.order('id ASC'), :id, :id, prompt: true) %>
   </p>

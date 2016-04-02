@@ -10,6 +10,7 @@
     <th>Event ID</th>
     <th>Event</th>
     <th>Category</th>
+    <th>Currency</th>
     <th>Price</th>
     <th>Quantity</th>
     <th></th>
@@ -22,6 +23,7 @@
       <td><%= Event.find(ticket.event_id).id %></td>
       <td><%= Event.find(ticket.event_id).name %></td>
       <td><%= ticket.category %></td>
+      <td><%= ticket.currency %></td>
       <td><%= ticket.price %></td>
       <td><%= ticket.quantity %></td>
       <td><%= link_to 'Show', admin_ticket_path(ticket) %></td>
