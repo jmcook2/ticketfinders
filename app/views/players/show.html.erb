@@ -93,7 +93,7 @@
           <h5 class="gotham-light" style="color: #A8A8A8;"><i class="fi-marker"></i><%= " #{event.venue.city}, #{event.venue.country}" %></h5>
         </div>
         <div class="small-2 columns table-three">
-          <%= link_to "Show Event", event_path(event), class: 'button tiny radius' %>
+          <%= link_to "Show Event", event_path(event), data: { no_turbolink: true }, class: 'button tiny radius' %>
         </div>
       </div>
     <% end %>
@@ -195,7 +195,7 @@
           <h5 class="gotham-light" style="color: #A8A8A8;"><i class="fi-marker"></i><%= " #{event.venue.city}, #{event.venue.country}" %></h5>
         </div>
         <div class="small-2 columns table-three">
-          <%= link_to "Show Event", event_path(event), class: 'button tiny radius' %>
+          <%= link_to "Show Event", event_path(event), data: { no_turbolink: true }, class: 'button tiny radius' %>
         </div>
       </div>
     <% end %>
